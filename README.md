@@ -1,6 +1,5 @@
 <div align="center">
 
-<img src="icons/icon-512.png" width="130" alt="Persian Name Finder" />
 
 # 🌙 معنایاب نام فارسی | Persian Name Finder
 
