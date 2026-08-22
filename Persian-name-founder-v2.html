@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>معنایاب نام فارسی | کوروش & مهدی</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌙</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.0.20/index.css">
+<style>
+:root{
+  --bg:#070b1c; --card:rgba(14,20,48,.88); --card2:rgba(255,255,255,.06);
+  --line:rgba(232,193,90,.22); --line2:rgba(232,193,90,.45);
+  --gold:#e8c15a; --gold2:#f6e2a0; --copper:#d99a5b;
+  --txt:#eef1ff; --mut:#9aa3c7; --pink:#ff8fb3; --blue:#7db7ff; --purple:#c39bff;
+  --shadow:0 14px 34px rgba(0,0,0,.38);
+  --rad:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif;
+  color:var(--txt); min-height:100vh; overflow-x:hidden;
+  background:
+    radial-gradient(55% 38% at 50% 0%, rgba(232,193,90,.10), transparent 60%),
+    radial-gradient(40% 32% at 88% 92%, rgba(125,183,255,.07), transparent 60%),
+    linear-gradient(180deg,#0a1030 0%, #070b1c 55%, #060a18 100%);
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pop{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+.wrap{max-width:900px;margin:0 auto;padding:0 18px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0 6px;animation:fadeUp .4s both}
+.brand{display:flex;align-items:center;gap:12px}
+.brand .moon{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-size:22px;background:radial-gradient(circle at 32% 30%, #fff8dc, var(--gold) 55%, #8a6a1e);box-shadow:0 0 22px rgba(232,193,90,.4)}
+.brand b{font-size:1.05rem;color:var(--gold2);letter-spacing:.3px}
+.brand small{display:block;color:var(--mut);font-size:.72rem}
+.stat-pill{font-size:.75rem;color:var(--gold2);border:1px solid var(--line);background:var(--card);padding:8px 14px;border-radius:999px}
+
+.hero{text-align:center;padding:30px 0 8px;animation:fadeUp .4s .04s both}
+.hero h1{font-size:clamp(1.7rem,5vw,2.7rem);font-weight:900;background:linear-gradient(90deg,var(--gold2),var(--gold),var(--copper));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--mut);margin-top:10px;font-size:.95rem}
+.divider{color:var(--gold);letter-spacing:14px;margin-top:16px;font-size:.8rem;opacity:.8}
+
+.search-card{margin:24px auto 8px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px;box-shadow:var(--shadow);animation:fadeUp .4s .08s both;position:relative}
+.search-card .lbl{display:flex;align-items:center;gap:8px;color:var(--gold2);font-size:.9rem;margin-bottom:14px}
+.search-row{display:flex;gap:10px;position:relative}
+#nameInput{flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:14px;color:var(--txt);font-family:inherit;font-size:1.05rem;padding:15px 18px;outline:none;transition:border-color .15s, box-shadow .15s}
+#nameInput:focus{border-color:var(--line2);box-shadow:0 0 0 4px rgba(232,193,90,.14)}
+#nameInput.shake{animation:shake .35s}
+.btn{border:none;cursor:pointer;font-family:inherit;font-weight:800;border-radius:14px;display:inline-flex;align-items:center;gap:8px;justify-content:center}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,var(--copper));color:#241a05;padding:15px 26px;font-size:1rem}
+.btn-ghost{background:var(--card2);color:var(--gold2);border:1px solid var(--line);padding:12px 16px;font-size:.85rem;transition:border-color .12s,background .12s}
+.btn-ghost:hover{border-color:var(--line2);background:rgba(232,193,90,.12)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;align-items:center}
+.chips .cap{color:var(--mut);font-size:.8rem}
+.chip{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--txt);border-radius:999px;padding:7px 14px;font-size:.82rem;cursor:pointer;transition:border-color .12s,color .12s;font-family:inherit}
+.chip:hover{border-color:var(--line2);color:var(--gold2)}
+
+#sugg{position:absolute;top:calc(100% + 8px);right:0;left:0;background:#101735;border:1px solid var(--line2);border-radius:14px;box-shadow:var(--shadow);z-index:50;overflow:hidden auto;display:none;max-height:300px}
+#sugg .s-item{display:flex;align-items:center;gap:10px;padding:12px 16px;cursor:pointer;border-bottom:1px solid rgba(255,255,255,.05)}
+#sugg .s-item:hover,#sugg .s-item.act{background:rgba(232,193,90,.12)}
+#sugg .s-item b{color:var(--gold2)}
+#sugg .s-item span{color:var(--mut);font-size:.78rem;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gtag{font-size:.68rem;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.g-پسر{background:rgba(125,183,255,.15);color:var(--blue);border:1px solid rgba(125,183,255,.4)}
+.g-دختر{background:rgba(255,143,179,.15);color:var(--pink);border:1px solid rgba(255,143,179,.4)}
+.g-مشترک{background:rgba(195,155,255,.15);color:var(--purple);border:1px solid rgba(195,155,255,.4)}
+
+#status{display:none;margin:18px auto;text-align:center;color:var(--gold2);font-size:.9rem}
+#status .spin{width:32px;height:32px;border-radius:50%;border:3px solid rgba(232,193,90,.2);border-top-color:var(--gold);margin:0 auto 12px;animation:spin .8s linear infinite}
+
+#results{padding:10px 0 30px}
+.res-head{text-align:center;color:var(--gold);letter-spacing:6px;font-size:.95rem;margin:18px 0 6px;animation:fadeUp .35s both}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:22px;margin-top:16px;animation:fadeUp .35s both}
+.card h3{display:flex;align-items:center;gap:10px;color:var(--gold2);font-size:1rem;margin-bottom:14px}
+.card h3 .ic{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-size:18px;background:rgba(232,193,90,.12);border:1px solid var(--line);flex-shrink:0}
+.name-hero{display:flex;flex-wrap:wrap;align-items:center;gap:12px;justify-content:center;padding:26px 20px;background:linear-gradient(135deg,rgba(232,193,90,.10),rgba(14,20,48,.9))}
+.name-hero .big{font-size:2.2rem;font-weight:900;color:var(--gold2)}
+.name-hero .latin{color:var(--mut);font-size:.85rem;letter-spacing:2px}
+.meaning-line{font-size:1.05rem;line-height:2}
+.meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;align-items:center}
+.meta-item{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:8px 14px;font-size:.8rem;color:var(--mut)}
+.meta-item b{color:var(--txt)}
+.copy-btn{margin-right:auto}
+a.famous-item{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:11px 14px;margin-top:8px;font-size:.9rem;line-height:1.9;text-decoration:none;color:var(--txt);transition:border-color .12s,background .12s}
+a.famous-item:hover{border-color:var(--line2);background:rgba(232,193,90,.08)}
+.famous-item .dot{color:var(--gold)}
+.famous-item .go{margin-right:auto;color:var(--gold2);flex-shrink:0}
+.wiki-box{display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.wiki-box img{width:110px;height:110px;object-fit:cover;border-radius:14px;border:1px solid var(--line2)}
+.wiki-box p{flex:1;min-width:220px;line-height:2.1;font-size:.93rem;color:#dfe5ff}
+.wiki-desc{color:var(--copper)!important;font-size:.8rem!important;margin-bottom:6px}
+.wiki-link{display:inline-flex;gap:6px;align-items:center;color:var(--gold2);text-decoration:none;font-size:.83rem;margin-top:12px;border:1px solid var(--line);border-radius:999px;padding:7px 14px;transition:background .12s}
+.wiki-link:hover{background:rgba(232,193,90,.12)}
+.links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.links-grid a{display:flex;gap:8px;align-items:center;justify-content:center;text-decoration:none;color:var(--txt);background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:12px;font-size:.83rem;transition:border-color .12s}
+.links-grid a:hover{border-color:var(--line2);color:var(--gold2)}
+.skl{height:14px;border-radius:8px;background:linear-gradient(90deg,rgba(255,255,255,.06) 25%,rgba(255,255,255,.14) 50%,rgba(255,255,255,.06) 75%);background-size:800px 100%;animation:shimmer 1.1s infinite linear;margin-top:10px}
+.notfound{text-align:center;padding:30px 10px}
+.notfound .emo{font-size:44px}
+
+.modal{position:fixed;inset:0;background:rgba(4,7,18,.8);z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.modal-panel{width:min(760px,100%);max-height:82vh;overflow-y:auto;background:#0d1330;border:1px solid var(--line2);border-radius:22px;padding:22px;animation:pop .2s both;box-shadow:var(--shadow)}
+.modal-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.modal-head h3{color:var(--gold2)}
+.modal-close{background:var(--card2);border:1px solid var(--line);color:var(--txt);width:36px;height:36px;border-radius:10px;cursor:pointer;font-size:1rem;font-family:inherit}
+.modal-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.modal-tools input{flex:1;min-width:160px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;color:var(--txt);font-family:inherit;padding:11px 14px;outline:none}
+.gfilter{display:flex;gap:8px;flex-wrap:wrap}
+.gfilter button{border:1px solid rgba(255,255,255,.14);background:var(--card2);color:var(--mut);border-radius:999px;padding:8px 16px;font-size:.78rem;cursor:pointer;font-family:inherit;transition:border-color .12s}
+.gfilter button.on{border-color:var(--line2);color:var(--gold2);background:rgba(232,193,90,.12)}
+.names-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
+.names-grid .n-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:12px 14px;cursor:pointer;transition:border-color .12s}
+.names-grid .n-item:hover{border-color:var(--line2)}
+.names-grid .n-item b{color:var(--gold2);display:block;margin-bottom:4px}
+.names-grid .n-item span{color:var(--mut);font-size:.74rem;line-height:1.8;display:block}
+
+footer{margin-top:30px;border-top:1px solid var(--line);padding:28px 0 34px;text-align:center;background:rgba(7,11,28,.7)}
+footer .made{font-size:1.2rem;color:var(--txt);margin-bottom:16px;line-height:2}
+footer .maker{background:linear-gradient(90deg,var(--gold2),var(--gold),var(--copper));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900;font-size:1.25rem;text-decoration:none;transition:filter .15s}
+footer .maker:hover{filter:drop-shadow(0 0 8px rgba(232,193,90,.7));text-decoration:underline}
+.foot-links{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.foot-links a{color:var(--gold2);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:.78rem;text-decoration:none;transition:background .12s,border-color .12s}
+.foot-links a:hover{background:rgba(232,193,90,.12);border-color:var(--line2)}
+footer small{display:block;color:var(--mut);opacity:.7;margin-top:14px;font-size:.72rem}
+
+#toast{position:fixed;bottom:26px;right:50%;transform:translateX(50%) translateY(70px);background:#101735;border:1px solid var(--line2);color:var(--gold2);border-radius:999px;padding:11px 22px;font-size:.85rem;z-index:200;transition:transform .2s,opacity .2s;opacity:0;box-shadow:var(--shadow);pointer-events:none}
+#toast.show{transform:translateX(50%) translateY(0);opacity:1}
+
+@media(max-width:600px){
+  .search-row{flex-direction:column}
+  .name-hero .big{font-size:1.7rem}
+  .copy-btn{margin-right:0}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <div class="moon">🌙</div>
+      <div><b>معنایاب نام فارسی</b><small>نسخهٔ حرفه‌ای ۲.۰ — سریع و روان</small></div>
+    </div>
+    <div class="stat-pill">📚 <span id="dbCount">۰</span> نام در پایگاه محلی</div>
+  </header>
+
+  <section class="hero">
+    <h1>معنایاب نام فارسی</h1>
+    <p>ریشه، معنا و چهره‌های مشهور هر نام را کشف کنید</p>
+    <div class="divider">✦ ✦ ✦</div>
+  </section>
+
+  <section class="search-card">
+    <div class="lbl">✦ نام فارسی خود را وارد کنید</div>
+    <div class="search-row">
+      <input id="nameInput" type="text" placeholder="مثلاً: کوروش، فاطمه، آرش…" autocomplete="off">
+      <button class="btn btn-gold" id="searchBtn">🔍 جستجو</button>
+      <div id="sugg"></div>
+    </div>
+    <div class="tools">
+      <button class="btn btn-ghost" id="browseBtn">📖 مرور همهٔ نام‌ها</button>
+      <span style="color:var(--mut);font-size:.75rem">جستجوی هوشمند: املای نادرست را هم تشخیص می‌دهد ✨</span>
+    </div>
+    <div class="chips" id="sampleChips"><span class="cap">نمونه:</span></div>
+  </section>
+
+  <div id="status"><div class="spin"></div><span id="statusTxt">در حال جستجو در ویکی‌پدیا فارسی...</span></div>
+
+  <main id="results"></main>
+</div>
+
+<div class="modal" id="modal">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <h3>📖 فهرست نام‌های پایگاه محلی</h3>
+      <button class="modal-close" id="modalClose">✕</button>
+    </div>
+    <div class="modal-tools">
+      <input id="modalSearch" placeholder="فیلتر نام‌ها...">
+      <div class="gfilter" id="gfilter">
+        <button data-g="همه" class="on">همه</button>
+        <button data-g="دختر">🌸 دختر</button>
+        <button data-g="پسر">🌊 پسر</button>
+        <button data-g="مشترک">✨ مشترک</button>
+      </div>
+    </div>
+    <div class="names-grid" id="namesGrid"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="made">ساخته شده توسط
+    <a class="maker" href="https://github.com/Kourosh242" target="_blank" rel="noopener">کوروش</a>
+    &amp;
+    <a class="maker" href="https://github.com/MR-SHARIFI-Dev" target="_blank" rel="noopener">مهدی</a> ❤️
+  </div>
+  <div class="foot-links">
+    <a href="https://github.com/Kourosh242/Persian-name-finder" target="_blank" rel="noopener">🗂 سورس پروژه در گیت‌هاب</a>
+  </div>
+  <small>اطلاعات از پایگاه داده محلی و ویکی‌پدیا فارسی/انگلیسی دریافت می‌شود</small>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ================= پایگاه داده محلی (۱۰۰ نام) ================= */
+const NAMES=[
+{n:"آرش",p:"Arash",g:"پسر",r:"فارسی باستان / اوستایی",m:"درخشنده، تابان؛ نام پهلوان کمانگیر ایران",d:"آرش کمانگیر در اسطوره‌های ایرانی جانش را در تیر نهاد تا مرز ایران را بازگرداند.",f:["آرش کمانگیر — پهلوان اساطیری ایران","آرش — خوانندهٔ ایرانی‌تبار"]},
+{n:"کوروش",v:["کورش"],p:"Kourosh",g:"پسر",r:"فارسی باستان",m:"خورشید؛ بنیان‌گذار شاهنشاهی هخامنشی",d:"کوروش بزرگ بنیان‌گذار نخستین شاهنشاهی جهانی و صادرکنندهٔ منشور حقوق بشر.",f:["کوروش بزرگ (کوروش دوم هخامنشی)"]},
+{n:"داریوش",p:"Dariush",g:"پسر",r:"فارسی باستان",m:"دارندهٔ نیکی، نگاهبان نیک",d:"داریوش بزرگ، سازمان‌دهندهٔ شاهنشاهی هخامنشی و سازندهٔ تخت‌جمشید.",f:["داریوش بزرگ (داریوش یکم)","داریوش مهرجویی — کارگردان سینما","داریوش اقبالی — خواننده"]},
+{n:"خشایار",p:"Khashayar",g:"پسر",r:"فارسی باستان",m:"شاه دلیر، فرمانروای شجاع",d:"خشایارشا، پادشاه هخامنشی و سازندهٔ دروازهٔ ملل.",f:["خشایارشای یکم — پادشاه هخامنشی"]},
+{n:"بهرام",p:"Bahram",g:"پسر",r:"پهلوی (وَرهرام)",m:"ایزد پیروزی، پیروزی‌بخش",d:"نام چند پادشاه ساسانی و سیارهٔ مریخ در فارسی کهن.",f:["بهرام چوبین — سردار ساسانی","بهرام بیضایی — نمایشنامه‌نویس","بهرام رادان — بازیگر"]},
+{n:"رستم",p:"Rostam",g:"پسر",r:"فارسی باستان",m:"نیرومند و درشت‌اندام، ستون‌تن",d:"جهان‌پهلوان شاهنامه و پدر سهراب؛ نماد پهلوانی ایرانیان.",f:["رستم — جهان‌پهلوان شاهنامهٔ فردوسی"]},
+{n:"سهراب",p:"Sohrab",g:"پسر",r:"فارسی",m:"سرخ‌روی، زیباروی و درخشان",d:"پسر رستم که در نبردی ناباورانه به دست پدر افتاد.",f:["سهراب — پهلوان شاهنامه","سهراب سپهری — شاعر و نقاش"]},
+{n:"سیاوش",p:"Siavash",g:"پسر",r:"اوستایی",m:"دارندهٔ اسبان سیاه؛ نماد بی‌گناهی",d:"شاهزادهٔ بی‌گناه شاهنامه که از آتش گذشت تا پاکی‌اش را ثابت کند.",f:["سیاوش — شاهزادهٔ شاهنامه"]},
+{n:"فرهاد",p:"Farhad",g:"پسر",r:"پهلوی",m:"شکوه و جلال، یاری‌گر",d:"کوهکن عاشق که بیستون را برای شیرین تراشید.",f:["فرهاد کوهکن — عاشق شاهنامه"]},
+{n:"بیژن",p:"Bijan",g:"پسر",r:"فارسی",m:"رزمنده، پهلوان جوان",d:"پهلوان شاهنامه و همسر منیژه، دختر افراسیاب.",f:["بیژن — پهلوان شاهنامه"]},
+{n:"کاوه",p:"Kaveh",g:"پسر",r:"فارسی",m:"آهنگر قیام‌گر، نماد عدالت‌خواهی",d:"کاوه آهنگر با درفش کاویانی بر ضحاک شورید.",f:["کاوه آهنگر — شاهنامه"]},
+{n:"بابک",p:"Babak",g:"پسر",r:"پهلوی",m:"بزرگ، پدر؛ نام سردار دلیر",d:"رهبر قیام ایرانیان در برابر خلافت عباسی.",f:["بابک خرمدین — رهبر قیام ایرانیان"]},
+{n:"آریا",p:"Aria",g:"مشترک",r:"اوستایی",m:"نجیب، آزاده؛ از نژاد آریایی",d:"نام کهن ایرانیان؛ سرود ملی ایران با «سرود آریایی» آغاز می‌شود.",f:["آریا عظیمی‌نژاد — آهنگساز"]},
+{n:"کیان",p:"Kian",g:"پسر",r:"فارسی",m:"پادشاهان، بزرگان؛ منسوب به کیانیان",d:"دودمان افسانه‌ای پادشاهان ایران در شاهنامه.",f:["کیانیان — دودمان شاهنامه"]},
+{n:"اشکان",p:"Ashkan",g:"پسر",r:"پارتی",m:"منسوب به اشک؛ بنیان‌گذار اشکانیان",d:"نام پادشاهان سلسلهٔ اشکانی ایران.",f:["اشک یکم — بنیان‌گذار اشکانیان","اشکان دژآگه — فوتبالیست"]},
+{n:"ساسان",p:"Sasan",g:"پسر",r:"پهلوی",m:"نیک‌اندیش؛ نیا ساسانیان",d:"بنیان‌گذار سلسلهٔ ساسانی و نیای شاهان ایران‌شهر.",f:["ساسان — نیا سلسلهٔ ساسانیان"]},
+{n:"جمشید",p:"Jamshid",g:"پسر",r:"اوستایی",m:"پادشاه درخشان، جام‌دارنده",d:"پادشاه پیشدادی که جشن نوروز از او به یادگار ماند.",f:["جمشید — پادشاه پیشدادی شاهنامه"]},
+{n:"فریدون",p:"Fereydoun",g:"پسر",r:"اوستایی",m:"دارندهٔ شکوه سه‌گانه، پیروز",d:"پادشاه پیشدادی که ضحاک مار‌دوش را به بند کشید.",f:["فریدون — پادشاه شاهنامه"]},
+{n:"منوچهر",p:"Manouchehr",g:"پسر",r:"اوستایی",m:"بهشت‌اندیش، چهرهٔ مینویی",d:"پادشاه پیشدادی و نوهٔ فریدون.",f:["منوچهر — پادشاه شاهنامه"]},
+{n:"کیخسرو",p:"Keykhosrow",g:"پسر",r:"فارسی",m:"پادشاه نیک‌نام، صاحب‌شکوه",d:"پادشاه کیانی، فرزند سیاوش و انتقام‌گیرندهٔ خون پدر.",f:["کیخسرو — پادشاه کیانی"]},
+{n:"زال",p:"Zal",g:"پسر",r:"فارسی",m:"سپیدموی؛ پرورش‌یافتهٔ سیمرغ",d:"پدر رستم که سیمرغ او را در البرزکوه پرورد.",f:["زال — پدر رستم در شاهنامه"]},
+{n:"گودرز",p:"Goudarz",g:"پسر",r:"فارسی",m:"پهلوان خردمند و نیک‌رای",d:"از پهلوانان بزرگ شاهنامه و پدربزرگ بیژن.",f:["گودرز — پهلوان شاهنامه"]},
+{n:"نیما",p:"Nima",g:"مشترک",r:"مازندرانی / فارسی",m:"نام کهن ایرانی؛ بزرگ و بلند",d:"نام پدر شعر نو فارسی.",f:["نیما یوشیج — پدر شعر نو فارسی"]},
+{n:"محمد",p:"Mohammad",g:"پسر",r:"عربی",m:"ستوده، بسیار پسندیده",d:"نام پیامبر اسلام و پرطرفدارترین نام در جهان اسلام.",f:["حضرت محمد (ص) — پیامبر اسلام","محمد مصدق — نخست‌وزیر ایران"]},
+{n:"علی",p:"Ali",g:"پسر",r:"عربی",m:"بلندمرتبه، والا",d:"نام نخستین امام شیعیان و خلیفهٔ چهارم.",f:["امام علی (ع) — نخستین امام شیعیان"]},
+{n:"حسین",p:"Hossein",g:"پسر",r:"عربی",m:"نیکو، سرور آزادگان",d:"نام امام سوم شیعیان و سالار شهیدان.",f:["امام حسین (ع) — امام سوم شیعیان"]},
+{n:"رضا",p:"Reza",g:"پسر",r:"عربی",m:"خشنود، راضی و پسندیده",d:"نام امام هشتم شیعیان، ملقب به رضا.",f:["امام رضا (ع) — امام هشتم شیعیان"]},
+{n:"مریم",p:"Maryam",g:"دختر",r:"عبری / آرامی",m:"بانوی پاک و دریایی",d:"نام مریم مقدس و بانوی بزرگ ریاضیات جهان.",f:["مریم مقدس (س)","مریم میرزاخانی — نخستین زن برندهٔ مدال فیلدز ریاضی"]},
+{n:"فاطمه",p:"Fatemeh",g:"دختر",r:"عربی",m:"بریده از بدی، پاک و نورانی",d:"نام دختر پیامبر اسلام و بانوی بزرگ جهان اسلام.",f:["حضرت فاطمهٔ زهرا (س)","فاطمه معتمدآریا — بازیگر","فاطمه گودرزی — بازیگر"]},
+{n:"زینب",p:"Zeinab",g:"دختر",r:"عربی",m:"زینت پدر، آرایهٔ خانواده",d:"نام بانوی بزرگ کربلا و راوی واقعهٔ عاشورا.",f:["حضرت زینب (س) — بانوی کربلا"]},
+{n:"سارا",p:"Sara",g:"دختر",r:"عبری",m:"شاهزاده، بانوی پاک و نیکو",d:"نامی جهانی و محبوب در بسیاری از فرهنگ‌ها.",f:["سارا — همسر ابراهیم پیامبر"]},
+{n:"نرگس",p:"Narges",g:"دختر",r:"فارسی / یونانی",m:"گل نرگس؛ چشم مست و گیرا",d:"نام گلی خوش‌بو و نماد چشمان افسونگر در شعر فارسی.",f:["نرگس محمدی — بازیگر"]},
+{n:"شیرین",p:"Shirin",g:"دختر",r:"فارسی",m:"گوارا، دلنشین و دوست‌داشتنی",d:"معشوقهٔ خسروپرویز در داستان خسرو و شیرین نظامی.",f:["شیرین — همسر خسروپرویز","شیرین عبادی — برندهٔ جایزهٔ نوبل صلح"]},
+{n:"مهتاب",p:"Mahtab",g:"دختر",r:"فارسی",m:"روشنایی ماه، نور ماه",d:"نامی شاعرانه از دل شب‌های روشن ایرانی.",f:["مهتاب کریمی — بازیگر"]},
+{n:"نیلوفر",p:"Niloofar",g:"دختر",r:"فارسی",m:"گل آبی مرداب، نیلوفر آبی",d:"گل مقدس ایرانیان باستان و نماد پاکی.",f:["نیلوفر — گل نیلوفر آبی"]},
+{n:"یاسمن",v:["یاسمین"],p:"Yasaman",g:"دختر",r:"فارسی",m:"گل خوش‌بوی یاس",d:"نام گلی سپید و معطر در باغ‌های ایرانی.",f:["یاسمن — گل یاس"]},
+{n:"نسترن",p:"Nastaran",g:"دختر",r:"فارسی",m:"گل رز وحشی، ناز و ظرافت",d:"گلی لطیف که در ادب فارسی نماد زیبایی است.",f:["نسترن — گل رز وحشی"]},
+{n:"گلنار",p:"Golnar",g:"دختر",r:"فارسی",m:"گل انار، سرخ و درخشان",d:"ترکیبی از گل و انار، نماد برکت ایرانی.",f:["گلنار — نام گل انار"]},
+{n:"شقایق",p:"Shaghayegh",g:"دختر",r:"فارسی",m:"گل سرخ دشت، داغ دل",d:"گل سرخ بهاری که در شعر فارسی نماد داغ و عشق است.",f:["شقایق دهقان — بازیگر"]},
+{n:"ارغوان",p:"Arghavan",g:"دختر",r:"فارسی",m:"درخت گل‌سرخابی بهاری",d:"نام درختی که بهارانش ارغوانی می‌شکفد.",f:["ارغوان — گل ارغوان"]},
+{n:"بهار",p:"Bahar",g:"مشترک",r:"فارسی",m:"فصل رویش، طراوت و نو شدن",d:"نام فصل شکوفایی و آغاز سال ایرانی.",f:["بهار — فصل نخست سال","محمدتقی بهار — ملقب به ملک‌الشعرای بهار"]},
+{n:"مهسا",p:"Mahsa",g:"دختر",r:"فارسی",m:"مانند ماه، ماه‌سیما",d:"نامی لطیف به معنای همدم ماه.",f:["مهسا وحدت — خواننده"]},
+{n:"پریسا",p:"Parisa",g:"دختر",r:"فارسی",m:"مانند پری، زیبا و افسونگر",d:"ترکیب پری + سا؛ دختر پری‌چهره.",f:["پریسا — از نام‌های محبوب ایرانی"]},
+{n:"آتنا",p:"Atena",g:"دختر",r:"یونانی / فارسی",m:"الههٔ خرد و دانایی",d:"نامی کهن که در ایران و یونان هر دو ریشه دارد.",f:["آتنا نعمتی — کماندار پارالمپیکی"]},
+{n:"میترا",v:["مهرا"],p:"Mitra",g:"دختر",r:"فارسی باستان",m:"مهر و پیمان، خورشید درخشان",d:"نام ایزدبانوی مهر و پیمان در ایران باستان.",f:["میترا — ایزدبانوی مهر"]},
+{n:"آناهیتا",p:"Anahita",g:"دختر",r:"اوستایی",m:"پاک و بی‌آلایش؛ ایزدبانوی آب‌ها",d:"ایزدبانوی آب‌ها و باروری در ایران باستان.",f:["آناهیتا — ایزدبانوی آب‌ها"]},
+{n:"ماندانا",p:"Mandana",g:"دختر",r:"مادی / فارسی",m:"عنبر سیاه، بانوی شایسته",d:"شاهدخت مادی و مادر کوروش بزرگ.",f:["ماندانا — مادر کوروش بزرگ"]},
+{n:"روژان",p:"Rozhan",g:"دختر",r:"کردی / فارسی",m:"روزها، روشنایی و نور",d:"نامی خوش‌آوا از زبان‌های ایرانی غربی.",f:["روژان — نام کردی به معنای روزها"]},
+{n:"لیلی",v:["لیلا"],p:"Leili",g:"دختر",r:"عربی",m:"زیبایی شب، سیاه‌چشم",d:"معشوقهٔ افسانه‌ای مجنون در داستان نظامی.",f:["لیلی — معشوقهٔ مجنون در لیلی و مجنون"]},
+{n:"شیدا",p:"Sheida",g:"دختر",r:"فارسی",m:"عاشق، شیدایی و دل‌بسته",d:"نام فرزند افراسیاب و واژه‌ای از تبار عشق.",f:["شیدا — فرزند افراسیاب در شاهنامه"]},
+{n:"فرنگیس",p:"Farangis",g:"دختر",r:"فارسی",m:"باشکوه، بانوی شکوه‌مند",d:"دختر افراسیاب و همسر سیاوش، مادر کیخسرو.",f:["فرنگیس — بانوی شاهنامه"]},
+{n:"کتایون",p:"Katayoun",g:"دختر",r:"اوستایی",m:"بزرگ‌بانو، ملکهٔ شکوه‌مند",d:"نام ملکه‌های ایرانی در متون کهن.",f:["کتایون ریاحی — بازیگر"]},
+{n:"پوران",p:"Pouran",g:"دختر",r:"فارسی",m:"دختر، بانوی جوان",d:"از نام‌های کهن دخترانهٔ ایرانی.",f:["پوران — خوانندهٔ کلاسیک ایرانی"]},
+{n:"رودابه",p:"Roodabeh",g:"دختر",r:"فارسی",m:"کودک روشن‌چهر، درخشان",d:"همسر زال و مادر رستم؛ بانوی کابل‌زمین.",f:["رودابه — مادر رستم"]},
+{n:"گردآفرید",p:"Gordafarid",g:"دختر",r:"فارسی",m:"آفریدهٔ جنگ، بانوی رزمنده",d:"بانوی جنگجوی شاهنامه که با سهراب نبرد کرد.",f:["گردآفرید — بانوی جنگجوی شاهنامه"]},
+{n:"تهمینه",p:"Tahmineh",g:"دختر",r:"فارسی",m:"نیرومند، دارای تن نیرومند",d:"همسر رستم و مادر سهراب در شاهنامه.",f:["تهمینه — مادر سهراب"]},
+{n:"ترنج",p:"Toranj",g:"دختر",r:"فارسی",m:"نقش و گل پارچه، خوش‌نقش",d:"نقش سنتی فرش و نگارگری ایرانی.",f:["ترنج — نقش اصیل ایرانی"]},
+{n:"ترمه",p:"Termeh",g:"دختر",r:"فارسی",m:"پارچهٔ ابریشمی نفیس یزد",d:"نام هنر بافت یزد و یادگار صنایع دستی ایرانی.",f:["ترمه — هنر بافت یزد"]},
+{n:"وندا",p:"Vanda",g:"دختر",r:"فارسی",m:"آرزو، ستایش و خواستن",d:"نامی کهن و خوش‌آوا از زبان پهلوی.",f:["وندا — نام پهلوی به معنای آرزو"]},
+{n:"آرمان",p:"Arman",g:"پسر",r:"فارسی",m:"آرزو، خواسته و هدف بزرگ",d:"واژه‌ای از تبار امید و خواستن در زبان فارسی.",f:["آرمان — نام ایرانی به معنای آرزو"]},
+{n:"آرشام",p:"Arsham",g:"پسر",r:"فارسی باستان",m:"دارندهٔ نیروی آرش، پهلوان نیرومند",d:"نام پدربزرگ داریوش بزرگ در تاریخ هخامنشی.",f:["آرشام — پدربزرگ داریوش بزرگ"]},
+{n:"بردیا",p:"Bardiya",g:"پسر",r:"فارسی باستان",m:"بلندمرتبه، والا و بلندآوازه",d:"نام پسر کوروش بزرگ در تاریخ هخامنشی.",f:["بردیا — پسر کوروش بزرگ"]},
+{n:"سام",p:"Sam",g:"پسر",r:"فارسی باستان",m:"آتش؛ نام پهلوان سپیدموی",d:"پهلوان بزرگ شاهنامه و پدر زال، پدربزرگ رستم.",f:["سام — پهلوان شاهنامه و پدر زال"]},
+{n:"زرتشت",p:"Zartosht",g:"پسر",r:"اوستایی",m:"دارندهٔ شتران زرین؛ پیامبر ایران باستان",d:"بنیان‌گذار آیین مزدیسنا و سرایندهٔ گات‌ها.",f:["زرتشت اسپنتمان — پیامبر ایران باستان"]},
+{n:"مازیار",p:"Maziar",g:"پسر",r:"فارسی / مازندرانی",m:"دارندهٔ کوه، کوه‌پایه",d:"رهبر دلیر قیام طبرستان در برابر خلافت عباسی.",f:["مازیار — رهبر قیام طبرستان"]},
+{n:"مهراد",p:"Mehrad",g:"پسر",r:"فارسی",m:"جوانمرد بزرگ، بخشندهٔ بزرگ",d:"ترکیب مهر + راد؛ از نام‌های خوش‌آوای نوین ایرانی.",f:["مهراد — نام ایرانی به معنای جوانمرد بزرگ"]},
+{n:"شاهین",p:"Shahin",g:"پسر",r:"فارسی",m:"پرندهٔ شکاری، تیزپرواز",d:"نام پرندهٔ شکاری و نماد بلندپروازی.",f:["شاهین — پرندهٔ شکاری"]},
+{n:"تورج",p:"Touraj",g:"پسر",r:"فارسی",m:"پسر فریدون؛ نام برادر ایرج",d:"در شاهنامه پسر فریدون و جد ترکان شمرده شده است.",f:["تورج — پسر فریدون در شاهنامه"]},
+{n:"ایرج",p:"Iraj",g:"پسر",r:"فارسی",m:"برادر تورج؛ نام پسر فریدون",d:"در شاهنامه پسر فریدون و جد ایرانیان شمرده شده است.",f:["ایرج — پسر فریدون در شاهنامه"]},
+{n:"سپهر",p:"Sepehr",g:"پسر",r:"فارسی",m:"آسمان، فلک",d:"واژهٔ کهن فارسی برای آسمان و گردون.",f:["سپهر — به معنای آسمان"]},
+{n:"پویا",p:"Pouya",g:"پسر",r:"فارسی",m:"جوینده، جستجوگر و پرتحرک",d:"از مصدر پوییدن؛ نماد جستجو و پویایی.",f:["پویا — به معنای جوینده"]},
+{n:"پیمان",p:"Peyman",g:"پسر",r:"فارسی",m:"عهد، سوگند و پیمان",d:"واژه‌ای از تبار وفاداری و عهد در زبان فارسی.",f:["پیمان — به معنای عهد و پیمان"]},
+{n:"پارسا",p:"Parsa",g:"پسر",r:"فارسی",m:"پرهیزگار، پاکدامن؛ منسوب به پارس",d:"نامی کهن به معنای پاک و پرهیزگار.",f:["پارسا پیروزفر — بازیگر سینما"]},
+{n:"حامد",p:"Hamed",g:"پسر",r:"عربی",m:"ستایشگر، سپاسگزار",d:"از ریشهٔ حمد به معنای ستایش.",f:["حامد بهداد — بازیگر سینما"]},
+{n:"مهدی",p:"Mahdi",g:"پسر",r:"عربی",m:"هدایت‌شده، راهنمایی‌شده",d:"نام امام دوازدهم شیعیان، ملقب به مهدی.",f:["امام مهدی (عج) — امام دوازدهم شیعیان"]},
+{n:"امیر",p:"Amir",g:"پسر",r:"عربی",m:"فرمانروا، سرور و پادشاه",d:"نامی پرکاربرد در ترکیب با نام‌های ایرانی و اسلامی.",f:["امیرکبیر — صدراعظم ناصالدین‌شاه"]},
+{n:"احسان",p:"Ehsan",g:"پسر",r:"عربی",m:"نیکوکاری، نیکی کردن",d:"واژه‌ای از تبار نیکی و بخشندگی.",f:["احسان خواجه‌امیری — خواننده"]},
+{n:"سینا",p:"Sina",g:"پسر",r:"فارسی / عربی",m:"دانشمند؛ نام فیلسوف بزرگ ایران",d:"یادگار نام ابوعلی سینا، فیلسوف و پزشک نامدار.",f:["ابوعلی سینا — فیلسوف و پزشک بزرگ ایرانی"]},
+{n:"فرزام",p:"Farzam",g:"پسر",r:"فارسی",m:"شایسته، بایسته و والا",d:"نامی کهن و خوش‌آهنگ در زبان فارسی.",f:["فرزام — به معنای شایسته"]},
+{n:"فرشاد",p:"Farshad",g:"پسر",r:"فارسی",m:"شادی‌بخش، گسترده‌کنندهٔ شادی",d:"ترکیب فر + شاد؛ نامی روشن و امیدبخش.",f:["فرشاد — به معنای شادی‌بخش"]},
+{n:"کیومرث",p:"Keyoumars",g:"پسر",r:"اوستایی",m:"نخستین انسان، پادشاه گیتی",d:"نخستین پادشاه پیشدادی در شاهنامهٔ فردوسی.",f:["کیومرث — نخستین پادشاه پیشدادی شاهنامه"]},
+{n:"هوشنگ",p:"Houshang",g:"پسر",r:"اوستایی",m:"پادشاه پیشدادی، بنیان‌گذار آتش",d:"دومین پادشاه پیشدادی شاهنامه و کشف‌کنندهٔ آتش.",f:["هوشنگ — پادشاه پیشدادی شاهنامه","هوشنگ ابتهاج — شاعر معاصر"]},
+{n:"تهمورث",p:"Tahmoures",g:"پسر",r:"اوستایی",m:"دارندهٔ اسب نیرومند، دلیر",d:"سومین پادشاه پیشدادی شاهنامه.",f:["تهمورث — پادشاه پیشدادی شاهنامه"]},
+{n:"گرشاسپ",p:"Garshasp",g:"پسر",r:"فارسی باستان",m:"پهلوان اژدهاکُش، نیرومند",d:"پهلوان افسانه‌ای ایران و نیای رستم.",f:["گرشاسپ — پهلوان افسانه‌ای ایران"]},
+{n:"نریمان",p:"Nariman",g:"پسر",r:"فارسی",m:"نیرومند، دلیر؛ پدر سام",d:"نیای خاندان پهلوانان شاهنامه.",f:["نریمان — پدر سام در شاهنامه"]},
+{n:"میلاد",p:"Milad",g:"پسر",r:"فارسی",m:"زادروز، تولد",d:"نامی نوین به معنای زایش و جشن زادروز.",f:["میلاد — به معنای زادروز"]},
+{n:"آزاده",p:"Azadeh",g:"دختر",r:"فارسی",m:"بانوی رها، شریف و بزرگوار",d:"نامی کهن برای بانوان بلندمنش ایرانی.",f:["آزاده صمدی — بازیگر سینما"]},
+{n:"آیدا",p:"Aida",g:"دختر",r:"اروپایی / لاتین",m:"شاد و کوشا؛ نامی بین‌المللی",d:"نامی جهانی که در ایران نیز محبوب است.",f:["آیدا — نام بین‌المللی به معنای شاد"]},
+{n:"باران",p:"Baran",g:"دختر",r:"فارسی",m:"بارش باران، رحمت آسمان",d:"نامی لطیف از دل طبیعت ایرانی.",f:["باران کوثری — بازیگر سینما"]},
+{n:"بنفشه",p:"Banafsheh",g:"دختر",r:"فارسی",m:"گل بنفشه، فروتن و خوش‌بو",d:"نام گلی بهاری و نماد فروتنی.",f:["بنفشه — گل بنفشه"]},
+{n:"درسا",p:"Dorsa",g:"دختر",r:"فارسی",m:"مانند مروارید، گران‌بها",d:"از ریشهٔ در به معنای مروارید.",f:["درسا — به معنای مانند مروارید"]},
+{n:"دنا",p:"Dena",g:"دختر",r:"فارسی",m:"نام بلندای زاگرس، استوار",d:"نام رشته‌کوهی بلند در جنوب ایران.",f:["دنا — رشته‌کوه زاگرس"]},
+{n:"رها",p:"Raha",g:"دختر",r:"فارسی",m:"آزاد، رها و بی‌قید",d:"نامی کوتاه و خوش‌آهنگ به معنای آزادی.",f:["رها — به معنای آزاد"]},
+{n:"رویا",p:"Roya",g:"دختر",r:"فارسی",m:"خواب، خیال و آرزو",d:"واژه‌ای از تبار خیال و امید.",f:["رویا تیموریان — بازیگر سینما"]},
+{n:"ساحل",p:"Sahel",g:"دختر",r:"عربی / فارسی",m:"کرانهٔ دریا، آسودگی",d:"نامی آرام از دل کنار دریا.",f:["ساحل — به معنای کرانهٔ دریا"]},
+{n:"صبا",p:"Saba",g:"دختر",r:"عربی / فارسی",m:"نسیم بامدادی، باد ملایم",d:"نامی شاعرانه که در شعر فارسی پیام‌آور است.",f:["صبا — به معنای نسیم بامدادی"]},
+{n:"غزل",p:"Ghazal",g:"دختر",r:"عربی",m:"شعر عاشقانه، سرود دل",d:"نام قالب زیبای شعر عاشقانهٔ فارسی.",f:["غزل — قالب شعر عاشقانهٔ فارسی"]},
+{n:"فائزه",p:"Faezeh",g:"دختر",r:"عربی",m:"رستگار، پیروز و بهروزمند",d:"از ریشهٔ فوز به معنای رستگاری.",f:["فائزه هاشمی — ورزشکار و فعال اجتماعی"]},
+{n:"الهه",p:"Elaha",g:"دختر",r:"عربی / فارسی",m:"فرشته، موجود آسمانی",d:"نامی لطیف به معنای فرشته و سروشت.",f:["الهه — خوانندهٔ قدیمی ایرانی"]},
+{n:"یلدا",p:"Yalda",g:"دختر",r:"فارسی / سریانی",m:"زایش، بلندترین شب سال",d:"نام شب چله، جشن کهن ایرانیان.",f:["شب یلدا — جشن شب چلهٔ ایرانی"]}
+];
+
+/* ================= ابزارها ================= */
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const faNum=n=>Number(n).toLocaleString('fa-IR');
+function debounce(fn,ms){let t;return(...a)=>{clearTimeout(t);t=setTimeout(()=>fn(...a),ms);};}
+function normalize(s){
+  return String(s??"").toLowerCase()
+    .replace(/ي/g,'ی').replace(/ك/g,'ک')
+    .replace(/ة/g,'ه')
+    .replace(/[أإآٱ]/g,'ا')
+    .replace(/ؤ/g,'و').replace(/ئ/g,'ی')
+    .replace(/[\u200c\u200f\u200e\u064b-\u065f\u0670]/g,'')
+    .replace(/\s+/g,' ').trim();
+}
+function lev(a,b){
+  const m=a.length,n=b.length;
+  if(!m)return n; if(!n)return m;
+  let prev=Array.from({length:n+1},(_,i)=>i);
+  for(let i=1;i<=m;i++){
+    const cur=[i];
+    for(let j=1;j<=n;j++)cur[j]=Math.min(prev[j]+1,cur[j-1]+1,prev[j-1]+(a[i-1]===b[j-1]?0:1));
+    prev=cur;
+  }
+  return prev[n];
+}
+
+/* ================= جستجوی هوشمند محلی ================= */
+function searchDB(q){
+  const res=[];
+  for(const it of NAMES){
+    const nn=normalize(it.n);
+    const vars=(it.v||[]).map(normalize);
+    let score=0;
+    if(q===nn||vars.includes(q)) score=100;
+    else if(nn.startsWith(q)) score=85-Math.min(10,q.length);
+    else if(vars.some(v=>v.startsWith(q))) score=70;
+    else if(nn.includes(q)) score=60;
+    else{
+      const maxD=Math.max(1,Math.floor(nn.length/4));
+      const dist=lev(q,nn);
+      if(dist<=maxD) score=45-dist*10;
+      else if(normalize(it.m).includes(q)||normalize(it.d||"").includes(q)) score=25;
+    }
+    if(score>0) res.push({item:it,score});
+  }
+  res.sort((a,b)=>b.score-a.score||a.item.n.localeCompare(b.item.n,'fa'));
+  return res.slice(0,6);
+}
+function fuzzySuggest(q){
+  return NAMES.map(it=>({it,d:lev(q,normalize(it.n))}))
+    .filter(x=>x.d<=3).sort((a,b)=>a.d-b.d).slice(0,6).map(x=>x.it);
+}
+
+/* ================= تحلیل هوشمند ریشهٔ نام‌های ناشناخته ================= */
+function rootAnalysis(q){
+  const s=normalize(q);
+  if(/^[a-z\s'.-]+$/.test(s)) return {lang:'لاتین / اروپایی',why:'نوشتار با حروف لاتین است'};
+  if(/[پچژگ]/.test(s)) return {lang:'فارسی',why:'دارای حروف اختصاصی فارسی (پ / چ / ژ / گ)'};
+  if(/^(ال|عبد)/.test(s)) return {lang:'عربی',why:'دارای الگوی رایج نام‌های عربی'};
+  if(/[ثذصضطظعغح]/.test(s)) return {lang:'عربی',why:'دارای حروف اختصاصی عربی'};
+  if(/(مهر|فر|زاد|بانو|دخت|وند|یار|ناز|دیس|گین)$/.test(s)) return {lang:'فارسی',why:'دارای پسوند رایج نام‌های فارسی'};
+  if(/^(مه|آذر|کی|خو)/.test(s)) return {lang:'فارسی باستان',why:'دارای پیشوند رایج نام‌های ایرانی کهن'};
+  return {lang:'احتمالاً فارسی یا عربی',why:'ساختار نام با هر دو خانوادهٔ زبانی سازگار است'};
+}
+function rootCard(q){
+  const a=rootAnalysis(q);
+  return `<div class="card">
+    <h3><span class="ic">🧬</span> تحلیل ریشهٔ نام (تخمین هوشمند)</h3>
+    <div class="meaning-line">این نام در پایگاه محلی ثبت نشده است؛ بر اساس تحلیل زبانی، ریشهٔ آن به‌احتمال <b style="color:var(--gold2)">${esc(a.lang)}</b> است${a.why?` <span style="color:var(--mut);font-size:.82rem">(${esc(a.why)})</span>`:''}.</div>
+  </div>`;
+}
+
+/* ================= ویکی‌پدیا (با لغو درخواست‌های قدیمی) ================= */
+let wikiCtrl=null;
+function newWikiSignal(){ if(wikiCtrl)try{wikiCtrl.abort();}catch(e){} wikiCtrl=new AbortController(); return wikiCtrl.signal; }
+async function fetchT(url,ms,signal){
+  const c=new AbortController(); const t=setTimeout(()=>c.abort(),ms);
+  if(signal)signal.addEventListener('abort',()=>c.abort(),{once:true});
+  try{ const r=await fetch(url,{signal:c.signal}); return await r.json(); }
+  catch(e){ return null; } finally{ clearTimeout(t); }
+}
+async function wikiOpenSearch(lang,q,signal){
+  const j=await fetchT(`https://${lang}.wikipedia.org/w/api.php?action=opensearch&search=${encodeURIComponent(q)}&limit=3&namespace=0&format=json&origin=*`,8000,signal);
+  return j&&Array.isArray(j[1])?j[1]:[];
+}
+async function wikiSummary(lang,title,signal){
+  const j=await fetchT(`https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`,8000,signal);
+  return j&&j.extract?j:null;
+}
+
+/* ================= وضعیت و توست ================= */
+const statusEl=$('#status'),statusTxt=$('#statusTxt');
+function showStatus(t){statusTxt.textContent=t;statusEl.style.display='block';}
+function hideStatus(){statusEl.style.display='none';}
+let toastT;
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('show');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('show'),2000);}
+
+/* ================= رندر نتایج ================= */
+const results=$('#results');
+let searchGen=0,currentPrimary=null;
+
+function genderTag(g){return `<span class="gtag g-${esc(g)}">${g==='پسر'?'🌊 پسر':g==='دختر'?'🌸 دختر':'✨ مشترک'}</span>`;}
+function personLink(f){
+  const namePart=f.split(/\s+[—–-]\s+/)[0].replace(/\(.*?\)/g,'').trim();
+  return `https://fa.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(namePart||f)}`;
+}
+function linksCard(name){
+  const q=encodeURIComponent(name);
+  return `<div class="card"><h3><span class="ic">🔗</span> منابع و پیوندها</h3>
+  <div class="links-grid">
+    <a href="https://fa.wikipedia.org/wiki/Special:Search?search=${q}" target="_blank" rel="noopener">📚 ویکی‌پدیا فارسی</a>
+    <a href="https://en.wikipedia.org/wiki/Special:Search?search=${q}" target="_blank" rel="noopener">🌐 ویکی‌پدیا انگلیسی</a>
+    <a href="https://fa.wiktionary.org/wiki/Special:Search?search=${q}" target="_blank" rel="noopener">✒️ ویکی‌واژه</a>
+    <a href="https://www.google.com/search?q=${encodeURIComponent('معنی نام '+name)}" target="_blank" rel="noopener">🔎 جستجوی گوگل</a>
+  </div></div>`;
+}
+
+function renderPrimary(match,others){
+  const it=match.item; currentPrimary=it;
+  const othersHtml=others.length?`<div class="card"><h3><span class="ic">🔀</span> نتایج مشابه دیگر</h3><div class="chips">${others.map(o=>`<button class="chip" data-q="${esc(o.item.n)}">${esc(o.item.n)}</button>`).join('')}</div></div>`:'';
+  const famousHtml=(it.f&&it.f.length)?`<div class="card"><h3><span class="ic">🌟</span> چهره‌های مشهور با این نام <span style="color:var(--mut);font-size:.72rem;font-weight:400">(برای شناخت بیشتر کلیک کنید)</span></h3>${it.f.map(f=>`<a class="famous-item" href="${personLink(f)}" target="_blank" rel="noopener"><span class="dot">✦</span><span>${esc(f)}</span><span class="go">↗</span></a>`).join('')}</div>`:'';
+  results.innerHTML=`
+    <div class="res-head">✦ نتایج جستجو ✦</div>
+    <div class="card name-hero">
+      <span class="big">${esc(it.n)}</span>
+      ${it.p?`<span class="latin">${esc(it.p.toUpperCase())}</span>`:''}
+      ${genderTag(it.g)}
+    </div>
+    <div class="card">
+      <h3><span class="ic">📖</span> معنا و ریشه نام</h3>
+      <div class="meaning-line">${esc(it.m)}</div>
+      ${it.d?`<div class="meaning-line" style="color:var(--mut);font-size:.88rem;margin-top:8px">${esc(it.d)}</div>`:''}
+      <div class="meta-row">
+        <span class="meta-item">🌱 ریشه: <b>${esc(it.r)}</b></span>
+        <span class="meta-item">🎗 جنسیت: <b>${esc(it.g)}</b></span>
+        <button class="btn btn-ghost copy-btn" data-copy="${esc(it.n+' : '+it.m+' (ریشه: '+it.r+')')}">📋 کپی معنا</button>
+      </div>
+    </div>
+    <div class="card" id="wikiCard"><h3><span class="ic">📚</span> توضیحات ویکی‌پدیا فارسی</h3><div class="skl"></div><div class="skl" style="width:80%"></div><div class="skl" style="width:60%"></div></div>
+    ${famousHtml}
+    ${linksCard(it.n)}
+    ${othersHtml}`;
+}
+
+function setWikiContent(s,lang,gen){
+  if(gen!==searchGen)return;
+  const el=$('#wikiCard'); if(!el)return;
+  el.innerHTML=`<h3><span class="ic">📚</span> توضیحات ویکی‌پدیا ${lang==='fa'?'فارسی':'انگلیسی'}</h3>
+  <div class="wiki-box">
+    ${s.thumbnail?`<img src="${esc(s.thumbnail.source)}" alt="${esc(s.title)}" loading="lazy" decoding="async">`:''}
+    <div style="flex:1;min-width:220px">
+      ${s.description?`<div class="wiki-desc">◆ ${esc(s.description)}</div>`:''}
+      <p>${esc(s.extract)}</p>
+      ${s.content_urls&&s.content_urls.desktop?`<a class="wiki-link" href="${esc(s.content_urls.desktop.page)}" target="_blank" rel="noopener">ادامهٔ مطلب در ویکی‌پدیا ↗</a>`:''}
+    </div>
+  </div>`;
+}
+function setWikiEmpty(name,gen){
+  if(gen!==searchGen)return;
+  const el=$('#wikiCard'); if(!el)return;
+  el.innerHTML=`<h3><span class="ic">📚</span> توضیحات ویکی‌پدیا فارسی</h3>
+  <div style="color:var(--mut);font-size:.88rem;line-height:2">مقاله‌ای در ویکی‌پدیا برای «${esc(name)}» یافت نشد؛ می‌توانید از پیوندهای بخش منابع استفاده کنید یا دوباره تلاش کنید.</div>
+  <button class="btn btn-ghost" style="margin-top:12px" data-retrywiki="1">🔄 تلاش دوباره</button>`;
+}
+
+function renderWikiOnly(s,q){
+  currentPrimary={n:s.title};
+  results.innerHTML=`
+    <div class="res-head">✦ نتیجه از ویکی‌پدیا فارسی ✦</div>
+    <div class="card" style="background:rgba(232,193,90,.07)"><div style="font-size:.82rem;color:var(--copper)">⚠️ این نام در پایگاه محلی یافت نشد؛ اطلاعات زیر از ویکی‌پدیا فارسی است.</div></div>
+    <div class="card name-hero"><span class="big">${esc(s.title)}</span></div>
+    ${rootCard(q)}
+    <div class="card" id="wikiCard"></div>
+    ${linksCard(s.title)}`;
+  setWikiContent(s,'fa',searchGen);
+}
+
+function renderNotFound(q){
+  const sugg=fuzzySuggest(q);
+  results.innerHTML=`
+    <div class="card notfound">
+      <div class="emo">😕</div>
+      <h3 style="justify-content:center;margin:12px 0 6px">نتیجه‌ای برای «${esc(q)}» یافت نشد</h3>
+      <p style="color:var(--mut);font-size:.88rem;line-height:2">املای نام را بررسی کنید یا از فهرست نام‌ها کمک بگیرید.</p>
+      ${sugg.length?`<div class="chips" style="justify-content:center;margin-top:16px"><span class="cap">شاید منظور شما:</span>${sugg.map(s=>`<button class="chip" data-q="${esc(s.n)}">${esc(s.n)}</button>`).join('')}</div>`:''}
+      <div style="margin-top:18px"><button class="btn btn-ghost" id="openBrowse2">📖 مرور همهٔ نام‌ها</button></div>
+    </div>
+    ${rootCard(q)}`;
+  const b=$('#openBrowse2'); if(b)b.addEventListener('click',openModal);
+}
+
+/* ================= جریان جستجو ================= */
+async function doSearch(raw){
+  const q=normalize(raw);
+  if(!q){const i=$('#nameInput');i.classList.add('shake');setTimeout(()=>i.classList.remove('shake'),400);return;}
+  searchGen++; const gen=searchGen;
+  const signal=newWikiSignal();
+  $('#nameInput').value=String(raw).trim(); closeSugg();
+  const dbRes=searchDB(q);
+  if(dbRes.length){
+    hideStatus();
+    renderPrimary(dbRes[0],dbRes.slice(1));
+    await loadWikiFor(dbRes[0].item,gen,signal);
+  }else{
+    showStatus('در حال جستجو در ویکی‌پدیا فارسی...');
+    const titles=await wikiOpenSearch('fa',q,signal);
+    if(gen!==searchGen)return;
+    if(titles.length){
+      const s=await wikiSummary('fa',titles[0],signal);
+      if(gen!==searchGen)return;
+      if(s){hideStatus();renderWikiOnly(s,q);scrollToResults();return;}
+    }
+    hideStatus(); renderNotFound(q);
+  }
+  scrollToResults();
+}
+function scrollToResults(){results.scrollIntoView({behavior:'smooth',block:'nearest'});}
+
+async function loadWikiFor(it,gen,signal){
+  const t1=await wikiOpenSearch('fa',it.n,signal);
+  if(gen!==searchGen)return;
+  if(t1.length){const s=await wikiSummary('fa',t1[0],signal);if(gen!==searchGen)return;if(s){setWikiContent(s,'fa',gen);return;}}
+  const t2=await wikiOpenSearch('en',it.p||it.n,signal);
+  if(gen!==searchGen)return;
+  if(t2.length){const s=await wikiSummary('en',t2[0],signal);if(gen!==searchGen)return;if(s){setWikiContent(s,'en',gen);return;}}
+  setWikiEmpty(it.n,gen);
+}
+
+/* ================= پیشنهاد خودکار (سبک و دیبانس‌شده) ================= */
+const input=$('#nameInput'),sugg=$('#sugg');
+let suggItems=[],suggIdx=-1;
+function renderSugg(list){
+  suggItems=list; suggIdx=-1;
+  if(!list.length){closeSugg();return;}
+  sugg.innerHTML=list.map((x,i)=>`<div class="s-item" data-i="${i}"><b>${esc(x.item.n)}</b><span>${esc(x.item.m)}</span>${genderTag(x.item.g)}</div>`).join('');
+  sugg.style.display='block';
+}
+function closeSugg(){sugg.style.display='none';}
+const onType=debounce(()=>{
+  const q=normalize(input.value);
+  if(!q){closeSugg();return;}
+  renderSugg(searchDB(q));
+},100);
+input.addEventListener('input',onType);
+input.addEventListener('focus',()=>{if(input.value.trim())onType();});
+input.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){e.preventDefault();doSearch(input.value);return;}
+  if(sugg.style.display==='block'&&suggItems.length){
+    if(e.key==='ArrowDown'){suggIdx=(suggIdx+1)%suggItems.length;paintSugg();e.preventDefault();}
+    else if(e.key==='ArrowUp'){suggIdx=(suggIdx-1+suggItems.length)%suggItems.length;paintSugg();e.preventDefault();}
+    else if(e.key==='Escape'){closeSugg();}
+  }
+});
+function paintSugg(){[...sugg.children].forEach((el,i)=>el.classList.toggle('act',i===suggIdx));}
+sugg.addEventListener('mousedown',e=>{
+  const it=e.target.closest('.s-item'); if(!it)return;
+  e.preventDefault(); doSearch(suggItems[+it.dataset.i].item.n);
+});
+document.addEventListener('click',e=>{if(!e.target.closest('.search-row'))closeSugg();});
+
+/* ================= مودال مرور نام‌ها ================= */
+const modal=$('#modal');let mGender='همه';
+function openModal(){modal.classList.add('open');renderGrid();document.body.style.overflow='hidden';}
+function closeModal(){modal.classList.remove('open');document.body.style.overflow='';}
+function renderGrid(){
+  const q=normalize($('#modalSearch').value);
+  const list=NAMES.filter(it=>(mGender==='همه'||it.g===mGender)&&(!q||normalize(it.n).includes(q)||normalize(it.m).includes(q)));
+  $('#namesGrid').innerHTML=list.length?list.map(it=>`<div class="n-item" data-q="${esc(it.n)}"><b>${esc(it.n)} ${genderTag(it.g)}</b><span>${esc(it.m)}</span></div>`).join(''):`<div style="color:var(--mut);grid-column:1/-1;text-align:center;padding:20px">نامی یافت نشد.</div>`;
+}
+$('#modalSearch').addEventListener('input',debounce(renderGrid,90));
+$('#gfilter').addEventListener('click',e=>{
+  const b=e.target.closest('button');if(!b)return;
+  mGender=b.dataset.g;
+  [...$('#gfilter').children].forEach(x=>x.classList.toggle('on',x===b));
+  renderGrid();
+});
+$('#browseBtn').addEventListener('click',openModal);
+$('#modalClose').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal();});
+
+/* ================= رویدادهای سراسری ================= */
+$('#searchBtn').addEventListener('click',()=>doSearch(input.value));
+document.addEventListener('click',e=>{
+  const chip=e.target.closest('[data-q]');
+  if(chip){if(modal.classList.contains('open'))closeModal();doSearch(chip.dataset.q);return;}
+  const cp=e.target.closest('[data-copy]');
+  if(cp){
+    const txt=cp.dataset.copy;
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(()=>toast('معنا کپی شد ✅')).catch(()=>fallbackCopy(txt));}
+    else fallbackCopy(txt);
+    return;
+  }
+  if(e.target.closest('[data-retrywiki]')&&currentPrimary){loadWikiFor(currentPrimary,searchGen,newWikiSignal());}
+});
+function fallbackCopy(t){
+  const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');toast('معنا کپی شد ✅');}catch(e){toast('کپی ممکن نشد 😕');}
+  ta.remove();
+}
+
+/* ================= شروع ================= */
+$('#dbCount').textContent=faNum(NAMES.length);
+const samples=['آرش','فاطمه','کوروش','نرگس','رستم','شیرین','بهرام','زینب'];
+$('#sampleChips').insertAdjacentHTML('beforeend',samples.map(s=>`<button class="chip" data-q="${s}">${s}</button>`).join(''));
+</script>
+</body>
+</html>
