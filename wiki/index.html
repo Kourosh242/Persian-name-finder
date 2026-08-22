@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ویکی معنایاب نام فارسی | مستندات پروژه</title>
+<meta name="description" content="ویکی و مستندات کامل پروژه معنایاب نام فارسی (Persian Name Finder) — معماری، الگوریتم جستجو، پایگاه داده و راهنمای استقرار">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📖</text></svg>">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fontsource/vazirmatn@5.0.20/index.css">
+<style>
+:root{
+  --bg:#070b1c; --card:rgba(14,20,48,.88); --card2:rgba(255,255,255,.06);
+  --line:rgba(232,193,90,.22); --line2:rgba(232,193,90,.45);
+  --gold:#e8c15a; --gold2:#f6e2a0; --copper:#d99a5b;
+  --txt:#eef1ff; --mut:#9aa3c7; --pink:#ff8fb3; --blue:#7db7ff; --purple:#c39bff; --green:#7ce8b8;
+  --shadow:0 14px 34px rgba(0,0,0,.38); --rad:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Vazirmatn','Segoe UI',Tahoma,sans-serif; color:var(--txt); min-height:100vh;
+  background:
+    radial-gradient(55% 38% at 50% 0%, rgba(232,193,90,.10), transparent 60%),
+    radial-gradient(40% 32% at 88% 92%, rgba(125,183,255,.07), transparent 60%),
+    linear-gradient(180deg,#0a1030 0%, #070b1c 55%, #060a18 100%);
+}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+
+/* ===== هدر ===== */
+.topbar{position:sticky;top:0;z-index:60;background:rgba(7,11,28,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.topbar-in{max-width:1200px;margin:0 auto;padding:12px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .moon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;font-size:21px;background:radial-gradient(circle at 32% 30%, #fff8dc, var(--gold) 55%, #8a6a1e);box-shadow:0 0 22px rgba(232,193,90,.4)}
+.brand b{font-size:1rem;color:var(--gold2)}
+.brand small{display:block;color:var(--mut);font-size:.7rem}
+.top-actions{margin-right:auto;display:flex;gap:8px;flex-wrap:wrap}
+.btn{border:none;cursor:pointer;font-family:inherit;font-weight:800;border-radius:12px;display:inline-flex;align-items:center;gap:7px;justify-content:center;text-decoration:none}
+.btn:active{transform:scale(.97)}
+.btn-gold{background:linear-gradient(135deg,var(--gold2),var(--gold) 55%,var(--copper));color:#241a05;padding:10px 18px;font-size:.85rem}
+.btn-ghost{background:var(--card2);color:var(--gold2);border:1px solid var(--line);padding:10px 15px;font-size:.8rem;transition:border-color .12s,background .12s}
+.btn-ghost:hover{border-color:var(--line2);background:rgba(232,193,90,.12)}
+
+/* ===== چیدمان ===== */
+.layout{max-width:1200px;margin:0 auto;padding:24px 18px 60px;display:grid;grid-template-columns:270px 1fr;gap:22px;align-items:start}
+aside.side{position:sticky;top:76px;background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:16px;box-shadow:var(--shadow);animation:fadeUp .4s both}
+.side .cap{color:var(--mut);font-size:.72rem;letter-spacing:2px;margin-bottom:10px}
+.side input{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:12px;color:var(--txt);font-family:inherit;font-size:.88rem;padding:11px 14px;outline:none;transition:border-color .15s,box-shadow .15s;margin-bottom:12px}
+.side input:focus{border-color:var(--line2);box-shadow:0 0 0 4px rgba(232,193,90,.14)}
+.nav a{display:flex;align-items:center;gap:9px;padding:10px 12px;border-radius:12px;color:var(--txt);text-decoration:none;font-size:.88rem;border:1px solid transparent;transition:background .12s,border-color .12s;margin-bottom:2px}
+.nav a:hover{background:rgba(232,193,90,.08);border-color:var(--line)}
+.nav a.on{background:rgba(232,193,90,.13);border-color:var(--line2);color:var(--gold2);font-weight:700}
+.nav .nores{color:var(--mut);font-size:.8rem;padding:10px 4px}
+.side-links{border-top:1px solid var(--line);margin-top:12px;padding-top:12px;display:flex;flex-direction:column;gap:6px}
+.side-links a{font-size:.78rem;color:var(--gold2);text-decoration:none;padding:6px 10px;border-radius:10px;transition:background .12s}
+.side-links a:hover{background:rgba(232,193,90,.1)}
+
+/* ===== محتوا ===== */
+main.content{min-width:0}
+.article{background:var(--card);border:1px solid var(--line);border-radius:var(--rad);padding:28px 30px;box-shadow:var(--shadow);animation:fadeUp .4s both}
+.article h1{font-size:clamp(1.3rem,3.4vw,1.9rem);font-weight:900;background:linear-gradient(90deg,var(--gold2),var(--gold),var(--copper));-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:6px;padding-bottom:12px;border-bottom:1px solid var(--line)}
+.article h2{color:var(--gold2);font-size:1.08rem;margin:26px 0 10px;display:flex;align-items:center;gap:8px}
+.article h2::before{content:"✦";color:var(--gold);font-size:.85rem}
+.article h3{color:var(--gold2);font-size:.95rem;margin:18px 0 8px}
+.article p{line-height:2.1;font-size:.92rem;color:#dfe5ff;margin:8px 0}
+.article ul,.article ol{line-height:2.1;font-size:.92rem;color:#dfe5ff;padding-right:22px;margin:8px 0}
+.article li{margin:3px 0}
+.article a{color:var(--gold2);text-decoration:none;border-bottom:1px dashed rgba(232,193,90,.4)}
+.article a:hover{color:var(--gold)}
+.article code{background:rgba(232,193,90,.1);border:1px solid var(--line);color:var(--gold2);border-radius:8px;padding:2px 8px;font-size:.8rem;font-family:Consolas,Monaco,monospace;direction:ltr;display:inline-block}
+.article pre{background:#0a0f28;border:1px solid var(--line);border-radius:14px;padding:16px;overflow-x:auto;direction:ltr;text-align:left;margin:12px 0;line-height:1.75}
+.article pre code{background:none;border:none;padding:0;color:#c9d6ff;font-size:.78rem;white-space:pre}
+.article table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.85rem}
+.article th{background:rgba(232,193,90,.12);color:var(--gold2);border:1px solid var(--line);padding:9px 12px;font-size:.8rem}
+.article td{border:1px solid rgba(255,255,255,.09);padding:9px 12px;color:#dfe5ff}
+.article tr:nth-child(even) td{background:rgba(255,255,255,.03)}
+.article .note{background:rgba(125,183,255,.08);border:1px solid rgba(125,183,255,.3);border-radius:14px;padding:12px 16px;font-size:.85rem;color:#dfe9ff;margin:12px 0;line-height:2}
+.article .note.gold{background:rgba(232,193,90,.09);border-color:var(--line2)}
+.article .tag{font-size:.68rem;border-radius:999px;padding:3px 10px;white-space:nowrap}
+.tg-p{background:rgba(125,183,255,.15);color:var(--blue);border:1px solid rgba(125,183,255,.4)}
+.tg-g{background:rgba(195,155,255,.15);color:var(--purple);border:1px solid rgba(195,155,255,.4)}
+.tg-ok{background:rgba(124,232,184,.13);color:var(--green);border:1px solid rgba(124,232,184,.4)}
+.back{margin-top:14px;display:inline-block;font-size:.78rem;color:var(--mut);text-decoration:none;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 14px;transition:color .12s,border-color .12s}
+.back:hover{color:var(--gold2);border-color:var(--line2)}
+
+footer{border-top:1px solid var(--line);padding:22px 18px 30px;text-align:center;color:var(--mut);font-size:.78rem;line-height:2.2}
+footer a{color:var(--gold2);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+#toast{position:fixed;bottom:24px;right:50%;transform:translateX(50%) translateY(20px);background:var(--gold);color:#241a05;font-weight:800;font-size:.85rem;padding:11px 22px;border-radius:999px;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;z-index:90}
+#toast.show{opacity:1;transform:translateX(50%) translateY(0)}
+
+@media(max-width:900px){
+  .layout{grid-template-columns:1fr;gap:14px}
+  aside.side{position:static}
+  .article{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="brand" href="#/home">
+      <div class="moon">📖</div>
+      <div><b>ویکی معنایاب نام فارسی</b><small>مستندات رسمی پروژه · Persian Name Finder</small></div>
+    </a>
+    <div class="top-actions">
+      <a class="btn btn-gold" href="https://kourosh242.github.io/Persian-name-finder/v2/" target="_blank" rel="noopener">🚀 اجرای نسخهٔ ۲</a>
+      <a class="btn btn-ghost" href="https://github.com/Kourosh242/Persian-name-finder" target="_blank" rel="noopener">🗂 گیت‌هاب</a>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="side">
+    <div class="cap">جستجو در ویکی…</div>
+    <input id="wikiSearch" type="text" placeholder="مثلاً: Levenshtein" autocomplete="off">
+    <nav class="nav" id="nav"></nav>
+    <div class="side-links">
+      <a href="https://kourosh242.github.io/Persian-name-finder/v2/" target="_blank" rel="noopener">🚀 اپ نسخهٔ ۲</a>
+      <a href="https://kourosh242.github.io/Persian-name-finder/" target="_blank" rel="noopener">📘 اپ نسخهٔ ۱</a>
+      <a href="https://github.com/Kourosh242/Persian-name-finder/wiki" target="_blank" rel="noopener">📓 ویکی گیت‌هاب</a>
+    </div>
+  </aside>
+  <main class="content" id="content"></main>
+</div>
+
+<footer>
+  🌙 <a href="https://kourosh242.github.io/Persian-name-finder/">معنایاب نام فارسی</a> · ساخته شده با ❤️ توسط
+  <a href="https://github.com/Kourosh242" target="_blank" rel="noopener">کوروش</a> و
+  <a href="https://github.com/MR-SHARIFI-Dev" target="_blank" rel="noopener">مهدی شریفی</a> · مجوز MIT
+  <br>سورس markdown این ویکی: <a href="https://github.com/Kourosh242/Persian-name-finder/tree/main/wiki" target="_blank" rel="noopener">پوشهٔ wiki مخزن</a>
+</footer>
+
+<div id="toast"></div>
+
+<script>
+/* ================= محتوای ویکی ================= */
+const ARTICLES=[
+{id:"home",icon:"🏠",title:"خانه",html:`
+<h1>🌙 ویکی معنایاب نام فارسی</h1>
+<p>خوش آمدید! این ویکی مرجع کامل مستندات پروژه <b>Persian Name Finder</b> است — از سمت راست (یا با جستجوی بالا) بین صفحات حرکت کنید.</p>
+<h2>لینک‌های زنده</h2>
+<table>
+<tr><th>منبع</th><th>آدرس</th></tr>
+<tr><td>✨ اپ نسخهٔ ۲ (جدید)</td><td><a href="https://kourosh242.github.io/Persian-name-finder/v2/" target="_blank" rel="noopener">kourosh242.github.io/Persian-name-finder/v2</a></td></tr>
+<tr><td>📘 اپ نسخهٔ ۱ (PWA)</td><td><a href="https://kourosh242.github.io/Persian-name-finder/" target="_blank" rel="noopener">kourosh242.github.io/Persian-name-finder</a></td></tr>
+<tr><td>📖 ویکی آنلاین</td><td><a href="https://kourosh242.github.io/Persian-name-finder/wiki/" target="_blank" rel="noopener">…/Persian-name-finder/wiki</a></td></tr>
+<tr><td>🗂 مخزن گیت‌هاب</td><td><a href="https://github.com/Kourosh242/Persian-name-finder" target="_blank" rel="noopener">github.com/Kourosh242/Persian-name-finder</a></td></tr>
+</table>
+<h2>معرفی سریع</h2>
+<p><b>معنایاب نام فارسی ۲.۰</b> یک اپ تحت وبِ <b>تک‌فایلی و بدون وابستگی</b> است که برای کشف ریشه، معنا و چهره‌های مشهور نام‌های فارسی ساخته شده:</p>
+<ul>
+<li>🔎 جستجوی هوشمند با تحمل املای نادرست (الگوریتم <code>Levenshtein</code>)</li>
+<li>📚 پایگاه محلی <b>۱۰۰ نام</b> با ریشه، معنا، داستان و مشاهیر</li>
+<li>🌐 اتصال زنده به ویکی‌پدیای فارسی و انگلیسی</li>
+<li>🧬 تحلیل ریشهٔ زبانی برای نام‌های ناشناخته</li>
+<li>🎨 تم شب طلایی، فونت وزیرمتن و پشتیبانی کامل RTL</li>
+</ul>
+<h2>شروع سریع</h2>
+<div class="note gold">🚀 <b>ساده‌ترین راه:</b> به <a href="https://kourosh242.github.io/Persian-name-finder/v2/" target="_blank" rel="noopener">نسخهٔ ۲</a> بروید و شروع به تایپ کنید — بدون نصب و ثبت‌نام. حتی «كورش» با كاف عربی و املای ناقص هم پیدایش می‌کند!</div>
+<p>اجرای محلی: مخزن را کلون کنید و <code>python3 -m http.server 8000</code> را اجرا کنید؛ یا فایل <code>Persian-name-founder-v2.html</code> را مستقیم دابل‌کلید کنید.</p>
+`},
+
+{id:"features",icon:"✨",title:"امکانات",html:`
+<h1>✨ امکانات نسخهٔ ۲</h1>
+<h2>جستجو</h2>
+<ul>
+<li>🔎 <b>جستجوی فازی</b> با تحمل املای نادرست — «کورش» ⟶ «کوروش»</li>
+<li>🔤 یکسان‌سازی خودکار حروف عربی/فارسی، حذف اعراب و نیم‌فاصله</li>
+<li>💡 <b>پیشنهاد زنده</b> هنگام تایپ با debounce یک‌صدم‌ثانیه + پیمایش با کیبورد (↑ ↓ Enter Esc)</li>
+<li>🔍 جستجو در <b>معنی و توضیح</b> نام‌ها، نه فقط خود نام‌ها</li>
+<li>🧩 پشتیبانی از <b>املاهای جایگزین</b> (فیلد variants)</li>
+</ul>
+<h2>داده و ویکی‌پدیا</h2>
+<ul>
+<li>📚 پایگاه محلی ۱۰۰ نام: ریشه، معنا، توضیح تاریخی/ادبی، آوانگاری لاتین و چهره‌های مشهور</li>
+<li>🌐 خلاصهٔ زندهٔ ویکی‌پدیای <b>فارسی</b> و در صورت نبود <b>انگلیسی</b>، همراه با عکس مقاله</li>
+<li>🧬 <b>تحلیل ریشه</b> برای نام‌های ناشناخته: تشخیص فارسی / عربی / لاتین / فارسی باستان</li>
+</ul>
+<h2>رابط کاربری</h2>
+<ul>
+<li>📖 مودال «مرور همهٔ نام‌ها» با فیلتر جنسیتی (🌊 پسر / 🌸 دختر / ✨ مشترک) و جستجو</li>
+<li>📋 کپی یک‌کلیکی معنی با اعلان Toast + سازگاری با مرورگرهای قدیمی</li>
+<li>🎨 تم «شب طلایی» با کارت‌های شیشه‌ای و انیمیشن‌های ظریف</li>
+<li>📱 کاملاً واکنش‌گرا · ♿ احترام به <code>prefers-reduced-motion</code> · 🔢 اعداد فارسی</li>
+<li>🛡 ایمن‌سازی کامل خروجی HTML (جلوگیری از XSS)</li>
+</ul>
+<h2>ماهیت فنی</h2>
+<div class="note">📦 نسخهٔ ۲ یک <b>تک‌فایل HTML</b> است: بدون build، بدون فریم‌ورک، بدون npm. تنها منابع بیرونی، فونت وزیرمتن (CDN) و API های ویکی‌پدیا هستند.</div>
+`},
+
+{id:"search-engine",icon:"🔎",title:"موتور جستجو",html:`
+<h1>🔎 موتور جستجو</h1>
+<p>موتور جستجو کاملاً <b>سمت-کلاینت</b> است و از سه لایه تشکیل شده:</p>
+<pre><code>ورودی کاربر
+   │
+   ▼
+① normalize()                  ← یکسان‌سازی حروف فارسی/عربی
+   │
+   ▼
+② searchDB() / fuzzySuggest()  ← امتیازدهی ۶سطحی + Levenshtein
+   │
+   ▼
+③ rootAnalysis()               ← تحلیل ریشهٔ نام‌های ناشناخته</code></pre>
+
+<h2>① نرمال‌سازی (normalize)</h2>
+<p>قبل از هر مقایسه، ورودی کاربر و نام‌های پایگاه یکدست می‌شوند: «ي» ⟵ «ی»، «ك» ⟵ «ک»، حذف اعراب (U+064B–065F)، نیم‌فاصله (ZWNJ) و فاصله‌های تکراری.</p>
+<pre><code>function normalize(s){
+  return String(s??"").toLowerCase()
+    .replace(/ي/g,'ی').replace(/ك/g,'ک')   // ي عربی → ی فارسی
+    .replace(/ة/g,'ه')
+    .replace(/[أإآٱ]/g,'ا')                // همزه‌ها → ا
+    .replace(/ؤ/g,'و').replace(/ئ/g,'ی')
+    .replace(/[\\u200c\\u200f\\u200e\\u064b-\\u065f\\u0670]/g,'')
+    .replace(/\\s+/g,' ').trim();
+}</code></pre>
+<div class="note">نتیجه: «كوروش»، «کورُوش» و «کوروش» هر سه یکسان درک می‌شوند.</div>
+
+<h2>② امتیازدهی ۶سطحی (searchDB)</h2>
+<table>
+<tr><th>#</th><th>شرط</th><th>امتیاز</th></tr>
+<tr><td>۱</td><td>تطابق کامل با نام یا املاهای جایگزین</td><td><span class="tag tg-ok">۱۰۰</span></td></tr>
+<tr><td>۲</td><td>نام با پرس‌وجو شروع شود (پیشوند)</td><td><span class="tag tg-ok">۸۵ − طول</span></td></tr>
+<tr><td>۳</td><td>املاهای جایگزین پیشوند باشند</td><td><span class="tag tg-ok">۷۰</span></td></tr>
+<tr><td>۴</td><td>نام شامل پرس‌وجو باشد</td><td><span class="tag tg-ok">۶۰</span></td></tr>
+<tr><td>۵</td><td>فاصلهٔ Levenshtein ≤ ⌊طول/۴⌋</td><td><span class="tag tg-g">۴۵ − ۱۰×فاصله</span></td></tr>
+<tr><td>۶</td><td>پرس‌وجو در معنی یا توضیح باشد</td><td><span class="tag tg-p">۲۵</span></td></tr>
+</table>
+<p>نتایج بر اساس امتیاز نزولی و سپس ترتیب الفبایی فارسی مرتب و <b>۶ نتیجهٔ برتر</b> نمایش داده می‌شوند. برای پیشنهاد زنده، <code>fuzzySuggest</code> با فاصلهٔ حداکثر ۳ نزدیک‌ترین نام‌ها را می‌دهد.</p>
+
+<h2>③ فاصلهٔ Levenshtein</h2>
+<p>پیاده‌سازی کلاسیک فاصلهٔ ویرایشی با پیچیدگی <code>O(m×n)</code> و حافظهٔ <code>O(n)</code> (فقط دو ردیف — بهینه برای موبایل):</p>
+<pre><code>function lev(a,b){
+  const m=a.length, n=b.length;
+  if(!m) return n;  if(!n) return m;
+  let prev = Array.from({length:n+1},(_,i)=>i);
+  for(let i=1;i&lt;=m;i++){
+    const cur=[i];
+    for(let j=1;j&lt;=n;j++)
+      cur[j]=Math.min(prev[j]+1, cur[j-1]+1,
+                      prev[j-1]+(a[i-1]===b[j-1]?0:1));
+    prev=cur;
+  }
+  return prev[n];
+}</code></pre>
+<div class="note gold">✨ <b>مثال واقعی:</b> «کورش» ⟶ فاصلهٔ ۱ از «کوروش» ⟶ امتیاز ۳۵ ⟶ به‌عنوان نزدیک‌ترین نتیجه پیشنهاد می‌شود.</div>
+
+<h2>④ تحلیل ریشه (rootAnalysis)</h2>
+<table>
+<tr><th>الگو در نام</th><th>تشخیص</th></tr>
+<tr><td>حروف لاتین</td><td>لاتین / اروپایی</td></tr>
+<tr><td>داشتن «پ چ ژ گ»</td><td>فارسی</td></tr>
+<tr><td>پیشوند «ال / عبد» یا حروف «ث ذ ص ض ط ظ ع غ ح»</td><td>عربی</td></tr>
+<tr><td>پسوند «مهر فر زاد بانو دخت وند یار ناز دیس گین»</td><td>فارسی</td></tr>
+<tr><td>پیشوند «مهـ آذر کی خو»</td><td>فارسی باستان</td></tr>
+<tr><td>سایر</td><td>احتمالاً فارسی یا عربی</td></tr>
+</table>
+
+<h2>بهینه‌سازی‌های UX</h2>
+<ul>
+<li><b>Debounce:</b> ۱۰۰ms برای پیشنهاد زنده و ۹۰ms برای فیلتر مودال</li>
+<li><b>کیبورد کامل:</b> ↑ ↓ Enter Esc در پیشنهادها</li>
+<li>مرتب‌سازی ثانویه با <code>localeCompare('fa')</code> برای ترتیب الفبای درست فارسی</li>
+</ul>
+`},
+
+{id:"wikipedia",icon:"🌐",title:"ویکی‌پدیا",html:`
+<h1>🌐 یکپارچه‌سازی ویکی‌پدیا</h1>
+<p>نسخهٔ ۲ علاوه بر پایگاه محلی، برای هر نام به‌صورت زنده خلاصهٔ ویکی‌پدیا را می‌گیرد و در «کارت ویکی» نمایش می‌دهد.</p>
+
+<h2>API های استفاده‌شده</h2>
+<table>
+<tr><th>API</th><th>کاربرد</th></tr>
+<tr><td><code>action=opensearch</code></td><td>پیدا کردن عنوان دقیق مقاله (محدود به ۳ نتیجه، namespace 0، با origin=* برای CORS)</td></tr>
+<tr><td><code>api/rest_v1/page/summary</code></td><td>خلاصه، عکس و لینک مقاله</td></tr>
+</table>
+
+<h2>جریان fallback دو مرحله‌ای</h2>
+<pre><code>نام پیدا شد در پایگاه محلی
+   │
+   ▼
+① opensearch در ویکی‌پدیای «فارسی» ── پیداشد ──▶ summary فارسی ✅
+   │ نبود
+   ▼
+② opensearch در ویکی‌پدیای «انگلیسی»
+   (با آوانگاری لاتین) ── پیداشد ──▶ summary انگلیسی ✅
+   │ نبود
+   ▼
+کارت «مقاله‌ای یافت نشد» + دکمهٔ تلاش مجدد ↻</code></pre>
+
+<h2>مهندسی مدیریت درخواست‌ها ⚙️</h2>
+<h3>۱. مهلت ۸ ثانیه‌ای (fetchT)</h3>
+<p>هر درخواست با <code>AbortController</code> و <code>setTimeout</code> احاطه شده؛ اگر ویکی‌پدیا دیر جواب داد، درخواست لغو و <code>null</code> برگردانده می‌شود — رابط کاربری هرگز قفل نمی‌شود.</p>
+<h3>۲. لغو درخواست‌های قدیمی (wikiCtrl)</h3>
+<p>با هر جستجوی جدید، درخواست قبلی <code>abort()</code> می‌شود؛ جستجوهای سریع پشت‌سرهم فقط <b>آخرین</b> درخواست را زنده نگه می‌دارند (حل مشکل race condition).</p>
+<h3>۳. نگهبان نسل جستجو (searchGen)</h3>
+<p>هر جستجو یک شناسهٔ نسل دارد؛ پاسخ‌ها فقط وقتی رندر می‌شوند که متعلق به جدیدترین نسل باشند.</p>
+
+<h2>بخش‌های مرتبط در UI</h2>
+<ul>
+<li>🖼 کارت ویکی: عکس، عنوان، خلاصه و لینک «مشاهدهٔ کامل»</li>
+<li>🌟 چهره‌های مشهور: هر چهره به جستجوی ویکی‌پدیای فارسی لینک است</li>
+<li>🔗 کارت لینک‌های بیرونی برای هر نام</li>
+</ul>
+`},
+
+{id:"database",icon:"📚",title:"پایگاه دادهٔ نام‌ها",html:`
+<h1>📚 پایگاه دادهٔ نام‌ها</h1>
+<p>پایگاه داده، آرایه‌ای جاوااسکریپتی به نام <code>NAMES</code> در فایل <code>Persian-name-founder-v2.html</code> است که <b>۱۰۰ نام</b> را در بر می‌گیرد.</p>
+
+<h2>ساختار رکورد</h2>
+<pre><code>{
+  n: "کوروش",                  // نام (یکتا)
+  v: ["کورش"],                 // املاهای جایگزین
+  p: "Kourosh",                // آوانگاری لاتین
+  g: "پسر",                    // پسر | دختر | مشترک
+  r: "فارسی باستان",           // ریشه / خاستگاه
+  m: "خورشید؛ بنیان‌گذار شاهنشاهی هخامنشی", // معنی
+  d: "کوروش بزرگ بنیان‌گذار نخستین…",        // توضیح
+  f: ["کوروش بزرگ (کوروش دوم هخامنشی)"]     // مشاهیر
+}</code></pre>
+<table>
+<tr><th>فیلد</th><th>نقش</th></tr>
+<tr><td><code>n</code></td><td>نام اصلی — یکتا</td></tr>
+<tr><td><code>v</code></td><td>املاهای رایج؛ در جستجو امتیاز کامل می‌گیرند</td></tr>
+<tr><td><code>p</code></td><td>آوانگاری لاتین؛ برای fallback ویکی‌پدیای انگلیسی</td></tr>
+<tr><td><code>g</code></td><td>جنسیت: 🌊 پسر · 🌸 دختر · ✨ مشترک</td></tr>
+<tr><td><code>r</code></td><td>ریشه: فارسی باستان، پهلوی، اوستایی، پارتی، فارسی، عربی…</td></tr>
+<tr><td><code>m</code></td><td>معنی کوتاه (قابل کپی با 📋)</td></tr>
+<tr><td><code>d</code></td><td>توضیح بلندتر: داستان، تاریخ یا ادبیات</td></tr>
+<tr><td><code>f</code></td><td>چهره‌های مشهور؛ هر مورد به ویکی‌پدیا لینک می‌شود</td></tr>
+</table>
+
+<h2>✅ افزودن نام جدید</h2>
+<ol>
+<li>فایل <code>Persian-name-founder-v2.html</code> را باز کنید و آرایهٔ <code>NAMES</code> را پیدا کنید.</li>
+<li>رکورد کامل جدیدی به آرایه اضافه کنید:</li>
+</ol>
+<pre><code>{n:"بهنام",p:"Behnam",g:"پسر",r:"فارسی",m:"نام نیک، دارای نشان نیک",
+ d:"نامی کهن به معنای کسی که نامش نیکوست.",
+ f:["بهنام صفوی — خواننده"]},</code></pre>
+<div class="note">شمارندهٔ «📚 X نام در پایگاه محلی» بالای اپ، خودکار به‌روز می‌شود. در PR حتماً <code>v2/index.html</code> را هم با سورس هم‌گام کنید.</div>
+<h2>قواعد مشارکت</h2>
+<ul>
+<li>حداقل فیلدهای <code>n · p · g · r · m</code> الزامی است</li>
+<li>معنی‌ها از منابع معتبر و با لحن ساده و محترمانه</li>
+<li>در <code>f</code> فقط افراد مشهور قابل راستی‌آزمایی در ویکی‌پدیا</li>
+</ul>
+`},
+
+{id:"deployment",icon:"🚀",title:"استقرار و اجرا",html:`
+<h1>🚀 استقرار و اجرا</h1>
+<h2>لینک‌های زنده (GitHub Pages)</h2>
+<table>
+<tr><th>مسیر مخزن</th><th>URL زنده</th><th>محتوا</th></tr>
+<tr><td><code>/</code></td><td><a href="https://kourosh242.github.io/Persian-name-finder/" target="_blank" rel="noopener">…/Persian-name-finder/</a></td><td>📘 نسخهٔ ۱ (PWA)</td></tr>
+<tr><td><code>/v2/</code></td><td><a href="https://kourosh242.github.io/Persian-name-finder/v2/" target="_blank" rel="noopener">…/Persian-name-finder/v2/</a></td><td>✨ نسخهٔ ۲</td></tr>
+<tr><td><code>/wiki/</code></td><td><a href="https://kourosh242.github.io/Persian-name-finder/wiki/" target="_blank" rel="noopener">…/Persian-name-finder/wiki/</a></td><td>📖 همین ویکی</td></tr>
+</table>
+
+<h2>سازوکار</h2>
+<p>سایت روی <b>GitHub Pages</b> از شاخهٔ <code>main</code> (ریشهٔ مخزن) سرو می‌شود؛ هر merge به main به‌طور خودکار در چند دقیقه منتشر می‌شود — بدون workflow اضافه.</p>
+<pre><code>push / merge به main ──▶ GitHub Pages build ──▶ ▲ سایت به‌روز می‌شود</code></pre>
+<div class="note gold">💡 برای انتشار نسخه‌های جدید کافی است پوشهٔ <code>vN/index.html</code> بسازید و merge کنید؛ نسخه در آدرس <code>/vN/</code> زنده می‌شود.</div>
+
+<h2>اجرای محلی</h2>
+<pre><code>git clone https://github.com/Kourosh242/Persian-name-finder.git
+cd Persian-name-finder
+python3 -m http.server 8000
+# v1:  http://localhost:8000/
+# v2:  http://localhost:8000/v2/</code></pre>
+<p>یا فایل <code>Persian-name-founder-v2.html</code> را مستقیم در مرورگر باز کنید — کل اپ یک فایل است.</p>
+<div class="note">⚠️ پایگاه محلی ۱۰۰ نام کاملاً آفلاین کار می‌کند؛ برای خلاصهٔ ویکی‌پدیا اینترنت لازم است.</div>
+
+<h2>سینک با ویکی گیت‌هاب (اختیاری)</h2>
+<p>سورس‌های markdown همین ویکی در پوشهٔ <code>wiki/</code> مخزن هستند. برای نمایش در ویکیِ رسمی گیت‌هاب، ابتدا از تب Wiki یک صفحهٔ اولیه بسازید سپس:</p>
+<pre><code>git clone https://github.com/Kourosh242/Persian-name-finder.wiki.git
+cp wiki/*.md Persian-name-finder.wiki/
+cd Persian-name-finder.wiki
+git add -A && git commit -m "sync wiki" && git push</code></pre>
+`},
+
+{id:"versions",icon:"🧭",title:"مقایسهٔ نسخه‌ها",html:`
+<h1>🧭 مقایسهٔ نسخهٔ ۱ و ۲</h1>
+<table>
+<tr><th>قابلیت</th><th>📘 نسخهٔ ۱</th><th>✨ نسخهٔ ۲</th></tr>
+<tr><td>معماری</td><td>چندفایلی (HTML + SW + manifest)</td><td><b>تک‌فایل HTML</b> بدون وابستگی</td></tr>
+<tr><td>پایگاه نام‌ها</td><td>فهرست ساده</td><td><b>۱۰۰ نام</b> با ریشه/معنا/داستان/مشاهیر</td></tr>
+<tr><td>جستجو</td><td>تطابق ساده</td><td><b>فازی + Levenshtein + نرمال‌سازی</b></td></tr>
+<tr><td>پیشنهاد هنگام تایپ</td><td>—</td><td>✅ با کیبورد</td></tr>
+<tr><td>ویکی‌پدیا</td><td>لینک خروجی</td><td><b>خلاصهٔ زندهٔ فا/ان با عکس</b></td></tr>
+<tr><td>تحلیل ریشهٔ نام ناشناخته</td><td>—</td><td>✅ 🧬</td></tr>
+<tr><td>مرور نام‌ها با فیلتر جنسیت</td><td>—</td><td>✅ 📖</td></tr>
+<tr><td>کپی معنی + Toast</td><td>—</td><td>✅ 📋</td></tr>
+<tr><td>تم</td><td>شب بنفش / ستاره</td><td><b>شب طلایی + وزیرمتن</b></td></tr>
+<tr><td>PWA (نصب/آفلاین)</td><td>✅</td><td>— (تک‌فایل و سبک؛ در نقشهٔ راه)</td></tr>
+<tr><td>URL روی Pages</td><td><code>/</code></td><td><code>/v2/</code></td></tr>
+</table>
+<h2>تاریخچهٔ خلاصه</h2>
+<ul>
+<li><b>v1.0.0</b> — انتشار اولیهٔ حرفه‌ای، PWA، مستندات دوزبانه</li>
+<li><b>v2.0.0</b> — بازطراحی کامل؛ موتور جستجوی هوشمند، ویکی‌پدیا، تحلیل ریشه، مودال مرور، ویکی پروژه و استقرار در <code>/v2/</code></li>
+</ul>
+<p>جزئیات کامل: <a href="https://github.com/Kourosh242/Persian-name-finder/blob/main/CHANGELOG.md" target="_blank" rel="noopener">CHANGELOG.md</a></p>
+`},
+
+{id:"faq",icon:"❓",title:"سوالات متداول",html:`
+<h1>❓ سوالات متداول</h1>
+<h3>۱. چطور از اپ استفاده کنم؟</h3>
+<p>به <a href="https://kourosh242.github.io/Persian-name-finder/v2/" target="_blank" rel="noopener">نسخهٔ ۲</a> بروید، نام را تایپ و Enter بزنید — بدون نصب و ثبت‌نام.</p>
+<h3>۲. اگر نام را غرق بنویسم چه می‌شود؟ 😅</h3>
+<p>مشکلی نیست! موتور جستجو با الگوریتم Levenshtein تا ~۲۵٪ خطای املایی را تحمل می‌کند؛ «کورش» و «آراشِ» هم پیدایشان می‌کند. اگر چیزی پیدا نشد، نزدیک‌ترین نام‌ها پیشنهاد می‌شوند.</p>
+<h3>۳. حروف عربی و فارسی قاطی می‌شوند؟</h3>
+<p>نه — تابع normalize خودکار «ي/ی» و «ك/ک» را یکسان می‌کند و اعراب و نیم‌فاصله را حذف می‌کند.</p>
+<h3>۴. اطلاعات از کجا می‌آید؟</h3>
+<p>دو منبع: <b>پایگاه محلی ۱۰۰ نام</b> (دستی گردآوری) و <b>ویکی‌پدیای فا/ان</b> (خلاصهٔ زنده از API رسمی).</p>
+<h3>۵. آیا اپ آفلاین کار می‌کند؟</h3>
+<p>جستجوی پایگاه محلی بله؛ برای ویکی‌پدیا اینترنت لازم است. نسخهٔ ۱ یک PWA کامل با کش آفلاین است.</p>
+<h3>۶. چرا نسخهٔ ۲ PWA نیست؟</h3>
+<p>عمداً تک‌فایل و سبک طراحی شده تا هرجا خواستید کپی/اجرا کنید. افزودن PWA به v2 در نقشهٔ راه است.</p>
+<h3>۷. چطور نام جدید اضافه کنم؟</h3>
+<p>راهنمای کامل در صفحهٔ «پایگاه دادهٔ نام‌ها» — به آرایهٔ NAMES اضافه و PR بفرستید.</p>
+<h3>۸. آیا داده‌های من ذخیره می‌شود؟</h3>
+<p>خیر؛ همه‌چیز در مرورگر خودتان اجرا می‌شود و تنها درخواست بیرونی، ویکی‌پدیا است.</p>
+<h3>۹. فونت لود نمی‌شود؟</h3>
+<p>فونت وزیرمتن از CDN لود می‌شود؛ در صورت محدودیت شبکه، فونت جایگزین (Tahoma) استفاده و اپ همچنان کار می‌کند.</p>
+<h3>۱۰. دامنهٔ اختصاصی؟</h3>
+<p>GitHub Pages از Custom Domain پشتیبانی می‌کند — در تنظیمات Pages مخزن فعال کنید.</p>
+`},
+
+{id:"roadmap",icon:"🗺",title:"نقشهٔ راه",html:`
+<h1>🗺 نقشهٔ راه</h1>
+<h2>✅ انجام‌شده (v2.0)</h2>
+<ul>
+<li>بازطراحی کامل با تم شب طلایی و فونت وزیرمتن</li>
+<li>پایگاه محلی ۱۰۰ نام (ریشه، معنا، داستان، مشاهیر)</li>
+<li>جستجوی فازی با Levenshtein + نرمال‌سازی حروف</li>
+<li>پیشنهاد زنده + پیمایش کیبورد</li>
+<li>یکپارچه‌سازی ویکی‌پدیای فا/ان با لغو درخواست و timeout</li>
+<li>تحلیل ریشهٔ نام‌های ناشناخته</li>
+<li>مودال مرور نام‌ها با فیلتر جنسیتی</li>
+<li>استقرار روی GitHub Pages (<code>/v2/</code>) و ویکی آنلاین (<code>/wiki/</code>)</li>
+</ul>
+<h2>🔜 کوتاه‌مدت</h2>
+<ul>
+<li>افزایش پایگاه نام‌ها به ۳۰۰+ نام (با مشارکت‌کنندگان)</li>
+<li>فیلتر «حرف الفبا» در مودال مرور</li>
+<li>حالت روشن/تاریک (Light/Dark toggle)</li>
+<li>نمایش محبوب‌ترین جستجوها</li>
+</ul>
+<h2>🎯 میان‌مدت</h2>
+<ul>
+<li>تبدیل v2 به PWA (manifest + service worker اختصاصی)</li>
+<li>اشتراک‌گذاری نتیجه با لینک هش‌دار و متادیتای OG</li>
+<li>تلفظ صوتی نام‌ها (Web Speech API)</li>
+<li>صفحهٔ آمار ریشه‌ها (نمودار توزیع)</li>
+</ul>
+<h2>🚀 بلندمدت</h2>
+<ul>
+<li>رابط دوزبانه (فارسی/انگلیسی با یک کلیک)</li>
+<li>افزونهٔ مرورگر برای جستجوی سریع نام</li>
+<li>API عمومی پایگاه نام‌ها (JSON استاتیک)</li>
+</ul>
+<div class="note gold">پیشنهاد دارید؟ <a href="https://github.com/Kourosh242/Persian-name-finder/issues" target="_blank" rel="noopener">Issue</a> باز کنید 🤝</div>
+`},
+
+{id:"contributing",icon:"🤝",title:"مشارکت",html:`
+<h1>🤝 مشارکت</h1>
+<p>از مشارکت شما استقبال می‌شود — از افزودن یک نام تا بهبود الگوریتم!</p>
+<h2>راه‌های مشارکت</h2>
+<table>
+<tr><th>نوع</th><th>چطور</th></tr>
+<tr><td>📚 افزودن نام</td><td>صفحهٔ «پایگاه دادهٔ نام‌ها» را ببینید</td></tr>
+<tr><td>🐛 گزارش باگ</td><td><a href="https://github.com/Kourosh242/Persian-name-finder/issues" target="_blank" rel="noopener">Issue</a> با مراحل بازتولید</td></tr>
+<tr><td>🎨 رابط کاربری</td><td>PR با توضیح و اسکرین‌شات</td></tr>
+<tr><td>🔧 الگوریتم</td><td>صفحهٔ «موتور جستجو» + Issue برای بحث</td></tr>
+<tr><td>🌍 مستندسازی</td><td>بهبود README و پوشهٔ <code>wiki/</code></td></tr>
+</table>
+<h2>مراحل ارسال Pull Request</h2>
+<pre><code>git clone https://github.com/&lt;USERNAME&gt;/Persian-name-finder.git
+cd Persian-name-finder
+git checkout -b feature/my-feature
+# تغییرات + هم‌گام‌سازی v2/index.html با سورس
+git add -A
+git commit -m "feat: add 5 new names"
+git push -u origin feature/my-feature
+# سپس PR به شاخهٔ main</code></pre>
+<h2>قواعد مهم</h2>
+<ol>
+<li>تک‌فایل بودن نسخهٔ ۲ را حفظ کنید — بدون npm/build</li>
+<li>محتوا محترمانه و بی‌طرف (معنی نام‌ها حساسیت فرهنگی دارد)</li>
+<li>نام‌های جدید فقط از منابع معتبر</li>
+<li>خروجی HTML همیشه با تابع <code>esc</code> ایمن شود (XSS)</li>
+<li><code>CHANGELOG.md</code> را برای تغییرات کاربر-محور به‌روز کنید</li>
+</ol>
+<p>سازندگان: <a href="https://github.com/Kourosh242" target="_blank" rel="noopener">کوروش</a> · <a href="https://github.com/MR-SHARIFI-Dev" target="_blank" rel="noopener">مهدی شریفی</a> ❤️</p>
+`}
+];
+
+/* ================= رندر و ناوبری ================= */
+const nav=$('#nav'),content=$('#content'),searchBox=$('#wikiSearch');
+function $(s){return document.querySelector(s);}
+const byId=id=>ARTICLES.find(a=>a.id===id)||ARTICLES[0];
+
+function renderNav(filter){
+  const f=(filter||'').trim().toLowerCase();
+  const list=f?ARTICLES.filter(a=>(a.title+a.html).toLowerCase().includes(f)):ARTICLES;
+  nav.innerHTML=list.length
+    ? list.map(a=>`<a href="#/${a.id}" data-id="${a.id}">${a.icon} ${a.title}</a>`).join('')
+    : `<div class="nores">📄 چیزی یافت نشد — عبارت دیگری امتحان کنید</div>`;
+  paintActive();
+}
+function paintActive(){
+  const id=location.hash.replace('#/','')||'home';
+  [...nav.children].forEach(el=>el.classList&&el.classList.toggle('on',el.dataset.id===id));
+}
+function render(){
+  const id=location.hash.replace('#/','')||'home';
+  const a=byId(id);
+  content.innerHTML=`<div class="article">${a.html}</div>
+  <a class="back" href="#/home">🏠 بازگشت به خانهٔ ویکی</a>`;
+  window.scrollTo({top:0,behavior:'auto'});
+  paintActive();
+}
+window.addEventListener('hashchange',render);
+let t;searchBox.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>renderNav(searchBox.value),80);});
+nav.addEventListener('click',e=>{if(e.target.closest('a'))searchBox.value='',renderNav('');});
+renderNav('');render();
+</script>
+</body>
+</html>
