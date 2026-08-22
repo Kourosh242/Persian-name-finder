@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>معنایاب نام فارسی | Ashkan Team Web</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon-192.png">
+  <meta name="theme-color" content="#c9a84c">
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --gold: #c9a84c;
+      --gold-light: #f0d080;
+      --gold-dark: #8b6914;
+      --deep-purple: #0d0722;
+      --mid-purple: #1a0e3a;
+      --soft-purple: #2d1b6e;
+      --card-bg: rgba(255,255,255,0.05);
+      --card-border: rgba(201,168,76,0.3);
+      --text-primary: #f5f0e8;
+      --text-secondary: #c8b89a;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      background: var(--deep-purple);
+      color: var(--text-primary);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ===== ANIMATED BACKGROUND ===== */
+    .bg-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(90,40,180,0.45) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(180,100,20,0.25) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 40% at 10% 80%, rgba(50,20,120,0.4) 0%, transparent 60%),
+        linear-gradient(160deg, #0d0722 0%, #1a0938 40%, #0e0520 100%);
+      animation: bgPulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgPulse {
+      0%  { filter: brightness(1); }
+      100%{ filter: brightness(1.12); }
+    }
+
+    .stars {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .star {
+      position: absolute;
+      border-radius: 50%;
+      background: white;
+      animation: twinkle linear infinite;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50%       { opacity: 0.9; transform: scale(1.4); }
+    }
+
+    /* ===== ORNAMENTAL BORDERS ===== */
+    .ornament-top, .ornament-bottom {
+      position: fixed;
+      left: 0; right: 0;
+      height: 6px;
+      z-index: 100;
+      background: linear-gradient(90deg,
+        transparent 0%, var(--gold-dark) 10%,
+        var(--gold) 30%, var(--gold-light) 50%,
+        var(--gold) 70%, var(--gold-dark) 90%, transparent 100%);
+      box-shadow: 0 0 18px rgba(201,168,76,0.7);
+    }
+    .ornament-top  { top: 0; }
+    .ornament-bottom { bottom: 0; }
+
+    /* ===== PAGE CONTAINER ===== */
+    .container {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 16px 60px;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 50px 0 30px;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .logo-icon {
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--gold-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 0 28px rgba(201,168,76,0.55), 0 0 60px rgba(201,168,76,0.2);
+      animation: iconFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes iconFloat {
+      0%,100%{ transform: translateY(0); }
+      50%    { transform: translateY(-7px); }
+    }
+
+    h1 {
+      font-size: clamp(2rem, 6vw, 3.2rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -1px;
+      text-shadow: none;
+      line-height: 1.2;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      margin-top: 10px;
+      font-weight: 300;
+    }
+
+    .divider {
+      width: 200px;
+      height: 2px;
+      margin: 22px auto;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    /* ===== SEARCH BOX ===== */
+    .search-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 36px 32px;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 48px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .search-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .search-label {
+      display: block;
+      font-size: 1rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    #nameInput {
+      flex: 1;
+      background: rgba(255,255,255,0.07);
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-radius: 14px;
+      padding: 16px 22px;
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      font-size: 1.2rem;
+      color: var(--text-primary);
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+      text-align: right;
+    }
+
+    #nameInput::placeholder { color: rgba(200,184,154,0.5); }
+
+    #nameInput:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 4px rgba(201,168,76,0.15);
+      background: rgba(255,255,255,0.1);
+    }
+
+    #searchBtn {
+      background: linear-gradient(135deg, var(--gold-dark) 0%, var(--gold) 50%, var(--gold-light) 100%);
+      border: none;
+      border-radius: 14px;
+      padding: 16px 28px;
+      font-family: 'Vazirmatn', Tahoma, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a0e3a;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s, filter 0.2s;
+      white-space: nowrap;
+      box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #searchBtn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0);
+      transition: background 0.2s;
+    }
+
+    #searchBtn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(201,168,76,0.55);
+      filter: brightness(1.08);
+    }
+
+    #searchBtn:active { transform: translateY(0); }
+
+    #searchBtn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .examples {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .examples-label {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .example-chip {
+      background: rgba(201,168,76,0.1);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 20px;
+      padding: 4px 14px;
+      font-size: 0.88rem;
+      color: var(--gold);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .example-chip:hover {
+      background: rgba(201,168,76,0.22);
+      transform: translateY(-1px);
+    }
+
+    /* ===== LOADING ===== */
+    #loading {
+      display: none;
+      text-align: center;
+      padding: 50px 0;
+    }
+
+    .spinner-wrap {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .spinner {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      border: 4px solid rgba(201,168,76,0.15);
+      border-top-color: var(--gold);
+      border-right-color: var(--gold-light);
+      animation: spin 0.9s linear infinite;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .loading-text {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%,100%{ opacity: 0.5; }
+      50%    { opacity: 1; }
+    }
+
+    /* ===== ERROR ===== */
+    #errorBox {
+      display: none;
+      background: rgba(220,50,50,0.12);
+      border: 1px solid rgba(220,50,50,0.4);
+      border-radius: 16px;
+      padding: 20px 24px;
+      text-align: center;
+      color: #ff8a80;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    /* ===== RESULT CARDS ===== */
+    #results { display: none; }
+
+    .result-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .result-name {
+      font-size: clamp(2rem, 7vw, 3.5rem);
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 6px;
+    }
+
+    .result-badge {
+      display: inline-block;
+      background: rgba(201,168,76,0.15);
+      border: 1px solid var(--card-border);
+      border-radius: 30px;
+      padding: 5px 20px;
+      font-size: 0.85rem;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .info-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 28px 28px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+      animation: fadeSlideIn 0.5s ease both;
+    }
+
+    @keyframes fadeSlideIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .info-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .card-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(201,168,76,0.2), rgba(201,168,76,0.05));
+      border: 1px solid rgba(201,168,76,0.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-title .card-icon-inline {
+      font-size: 18px;
+    }
+
+    .card-body {
+      font-size: 0.97rem;
+      color: var(--text-secondary);
+      line-height: 2;
+    }
+
+    .card-body strong { color: var(--text-primary); }
+
+    /* Meaning card specifics */
+    .meaning-main {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .meaning-detail {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 2;
+    }
+
+    /* Famous people */
+    .people-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .person-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      border: 1px solid rgba(201,168,76,0.12);
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .person-item:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(201,168,76,0.3);
+    }
+
+    .person-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-dark), var(--soft-purple));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+      border: 2px solid rgba(201,168,76,0.3);
+    }
+
+    .person-info { flex: 1; }
+
+    .person-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+    }
+
+    .person-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .person-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 6px;
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 8px;
+      padding: 2px 10px;
+      transition: background 0.2s;
+    }
+
+    .person-link:hover {
+      background: rgba(201,168,76,0.12);
+    }
+
+    /* Origin badge */
+    .origin-tag {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-left: 8px;
+      margin-bottom: 6px;
+    }
+
+    .tag-persian  { background: rgba(120,60,200,0.25); color: #c8a0ff; border: 1px solid rgba(150,80,220,0.4); }
+    .tag-arabic   { background: rgba(201,168,76,0.18); color: #e8c860; border: 1px solid rgba(201,168,76,0.4); }
+    .tag-avestan  { background: rgba(60,180,120,0.18); color: #80e0b0; border: 1px solid rgba(60,180,120,0.4); }
+    .tag-unknown  { background: rgba(140,140,140,0.18); color: #b0b0b0; border: 1px solid rgba(140,140,140,0.3); }
+
+    /* Sources */
+    .sources-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .source-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .source-badge:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    .source-fa {
+      background: rgba(60,120,220,0.2);
+      color: #80aaff;
+      border: 1px solid rgba(60,120,220,0.4);
+    }
+
+    .source-en {
+      background: rgba(201,168,76,0.18);
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+    }
+
+    /* Gender tag */
+    .gender-tag {
+      display: inline-block;
+      padding: 3px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+
+    .gender-male   { background: rgba(60,120,220,0.2); color: #80aaff; border: 1px solid rgba(60,120,220,0.3); }
+    .gender-female { background: rgba(220,80,120,0.2); color: #ffaac8; border: 1px solid rgba(220,80,120,0.3); }
+    .gender-unisex { background: rgba(120,80,200,0.2); color: #d0b0ff; border: 1px solid rgba(120,80,200,0.3); }
+
+    /* Wikipedia summary */
+    .wiki-excerpt {
+      background: rgba(255,255,255,0.03);
+      border-right: 3px solid var(--gold);
+      padding: 14px 18px;
+      border-radius: 0 12px 12px 0;
+      font-size: 0.92rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      margin-top: 10px;
+    }
+
+    /* No people found */
+    .no-people {
+      text-align: center;
+      padding: 24px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 30px 0 10px;
+      color: rgba(200,184,154,0.45);
+      font-size: 0.82rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    footer .brand {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 0.92rem;
+    }
+
+    .footer-divider {
+      width: 100px;
+      height: 1px;
+      margin: 14px auto 10px;
+      background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+    }
+
+    /* ===== DECORATIVE ===== */
+    .persian-pattern {
+      position: absolute;
+      opacity: 0.04;
+      font-size: 200px;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      user-select: none;
+      color: var(--gold);
+    }
+
+    .progress-bar {
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light));
+      border-radius: 2px;
+      margin-top: 16px;
+      transform-origin: right;
+      animation: progressAnim 2s ease-in-out infinite;
+    }
+
+    @keyframes progressAnim {
+      0%   { transform: scaleX(0); opacity: 1; }
+      70%  { transform: scaleX(1); opacity: 1; }
+      100% { transform: scaleX(1); opacity: 0; }
+    }
+
+
+
+    /* Accessibility: reduce heavy animations for users who prefer less motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      .search-row { flex-direction: column; }
+      #searchBtn { width: 100%; }
+      .info-card  { padding: 20px 18px; }
+      .search-card{ padding: 24px 18px; }
+    }
+
+    /* scroll reveal helper */
+    .reveal { animation-delay: calc(var(--i, 0) * 100ms); }
+  </style>
+</head>
+<body>
+
+<!-- Decorative borders -->
+<div class="ornament-top"></div>
+<div class="ornament-bottom"></div>
+
+<!-- Animated background -->
+<div class="bg-layer"></div>
+<div class="stars" id="starsContainer"></div>
+
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="logo-wrap">
+      <div class="logo-icon">🌙</div>
+    </div>
+    <h1>معنایاب نام فارسی</h1>
+    <p class="subtitle">ریشه، معنا و چهره‌های مشهور هر نام را کشف کنید</p>
+    <div class="divider"></div>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="search-card">
+    <div class="persian-pattern">ف</div>
+    <label class="search-label" for="nameInput">✦ نام فارسی خود را وارد کنید</label>
+    <div class="search-row">
+      <input
+        type="text"
+        id="nameInput"
+        placeholder="مثال: آرش، فاطمه، کوروش، نرگس..."
+        autocomplete="off"
+        dir="rtl"
+      />
+      <button id="searchBtn" onclick="searchName()">
+        🔍 جستجو
+      </button>
+    </div>
+    <div class="examples">
+      <span class="examples-label">نمونه:</span>
+      <span class="example-chip" onclick="setExample('آرش')">آرش</span>
+      <span class="example-chip" onclick="setExample('فاطمه')">فاطمه</span>
+      <span class="example-chip" onclick="setExample('کوروش')">کوروش</span>
+      <span class="example-chip" onclick="setExample('نرگس')">نرگس</span>
+      <span class="example-chip" onclick="setExample('رستم')">رستم</span>
+      <span class="example-chip" onclick="setExample('شیرین')">شیرین</span>
+      <span class="example-chip" onclick="setExample('بهرام')">بهرام</span>
+      <span class="example-chip" onclick="setExample('زینب')">زینب</span>
+    </div>
+  </div>
+
+  <!-- LOADING -->
+  <div id="loading">
+    <div class="spinner-wrap">
+      <div class="spinner"></div>
+      <p class="loading-text" id="loadingText">در حال جستجو در ویکی‌پدیا فارسی...</p>
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- ERROR -->
+  <div id="errorBox">
+    <span id="errorMsg">خطایی رخ داد. لطفاً مجدداً تلاش کنید.</span>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results">
+
+    <div class="result-header">
+      <div class="result-name" id="resultName"></div>
+      <div class="result-badge">✦ نتایج جستجو ✦</div>
+    </div>
+
+    <div class="cards-grid">
+
+      <!-- MEANING CARD -->
+      <div class="info-card reveal" style="--i:0" id="meaningCard">
+        <div class="card-title">
+          <span class="card-icon-inline">📖</span>
+          معنا و ریشه نام
+        </div>
+        <div id="meaningContent"></div>
+      </div>
+
+      <!-- WIKIPEDIA FA CARD -->
+      <div class="info-card reveal" style="--i:1" id="wikiCard">
+        <div class="card-title">
+          <span class="card-icon-inline">📚</span>
+          توضیحات ویکی‌پدیا فارسی
+        </div>
+        <div id="wikiContent"></div>
+      </div>
+
+      <!-- FAMOUS PEOPLE CARD -->
+      <div class="info-card reveal" style="--i:2" id="peopleCard">
+        <div class="card-title">
+          <span class="card-icon-inline">🌟</span>
+          چهره‌های مشهور با این نام
+        </div>
+        <div id="peopleContent"></div>
+      </div>
+
+      <!-- SOURCES CARD -->
+      <div class="info-card reveal" style="--i:3" id="sourcesCard">
+        <div class="card-title">
+          <span class="card-icon-inline">🔗</span>
+          منابع و پیوندها
+        </div>
+        <div id="sourcesContent"></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-divider"></div>
+  <p>ساخته شده توسط <span class="brand">Ashkan Team Web</span></p>
+  <p style="margin-top:6px; font-size:0.76rem;">
+    اطلاعات از پایگاه داده محلی و ویکی‌پدیا فارسی/انگلیسی دریافت می‌شود
+  </p>
+  <div class="footer-divider"></div>
+</footer>
+
+<script>
+// ============================================================
+//  STAR FIELD GENERATOR
+// ============================================================
+(function generateStars() {
+  const container = document.getElementById('starsContainer');
+  if (!container) return;
+  for (let i = 0; i < 120; i++) {
+    const s = document.createElement('div');
+    s.className = 'star';
+    const size = Math.random() * 2.5 + 0.5;
+    s.style.cssText = `
+      width:${size}px; height:${size}px;
+      top:${Math.random()*100}%;
+      left:${Math.random()*100}%;
+      animation-duration:${(Math.random()*4+2).toFixed(1)}s;
+      animation-delay:${(Math.random()*5).toFixed(1)}s;
+    `;
+    container.appendChild(s);
+  }
+})();
+
+// ============================================================
+//  PERSIAN NAME DATABASE (local fallback + enrichment)
+// ============================================================
+const persianNamesDB = {
+  'آرش': {
+    meaning: 'درخشان، راستگو، شفاف',
+    detail: 'آرش به معنای درخشان و صادق است. این نام از اوستایی «ارِشَه» گرفته شده که به معنای راست‌کار و نیکوکار است.',
+    origin: 'اوستایی - ایران باستان',
+    originTag: 'avestan',
+    gender: 'male',
+    wikiQuery: 'آرش کمانگیر',
+    enWikiQuery: 'Arash (mythology)',
+  },
+  'فاطمه': {
+    meaning: 'از شیر بازگرفته شده، بریده شده از ناپاکی',
+    detail: 'فاطمه از ریشه عربی «فطم» به معنای جدا کردن از شیر مادر یا پاک و منزه بودن از هر آلودگی است.',
+    origin: 'عربی',
+    originTag: 'arabic',
+    gender: 'female',
+    wikiQuery: 'فاطمه زهرا',
+    enWikiQuery: 'Fatima bint Muhammad',
+  },
+  'کوروش': {
+    meaning: 'خورشید، چشم، دور از خوار شدن',
+    detail: 'کوروش نامی ایرانی باستان است که برخی آن را از «خور» (خورشید) و برخی دیگر از ریشه‌ای به معنای «کسی که بر دشمن پیروز می‌شود» می‌دانند.',
+    origin: 'فارسی باستان',
+    originTag: 'persian',
+    gender: 'male',
+    wikiQuery: 'کوروش بزرگ',
+    enWikiQuery: 'Cyrus the Great',
+  },
+  'نرگس': {
+    meaning: 'گل نرگس، نمادِ زیبایی و ناز',
+    detail: 'نرگس نام گلی معروف است که در ادبیات فارسی نمادِ چشم زیبا و ناز و دلربایی بوده است. این نام از یونانی «ناركισσος» وارد فارسی شده.',
+    origin: 'یونانی - فارسی',
+    originTag: 'persian',
+    gender: 'female',
+    wikiQuery: 'نرگس (گیاه)',
+    enWikiQuery: 'Narcissus (plant)',
+  },
+  'رستم': {
+    meaning: 'پهلوان بزرگ، ستبر و نیرومند',
+    detail: 'رستم از ریشه «رَئوذَسْتَمَه» اوستایی به معنای کسی که بازویی چون سنگ دارد و بسیار نیرومند است. پهلوان اسطوره‌ای شاهنامه فردوسی.',
+    origin: 'اوستایی - ایران باستان',
+    originTag: 'avestan',
+    gender: 'male',
+    wikiQuery: 'رستم',
+    enWikiQuery: 'Rostam',
+  },
+  'شیرین': {
+    meaning: 'دلپذیر، خوش‌طعم، گوارا، محبوب',
+    detail: 'شیرین نامی فارسی به معنای گوارا، لطیف و محبوب است. این نام با داستان عاشقانه خسرو و شیرین در ادبیات فارسی جاودانه شده.',
+    origin: 'فارسی',
+    originTag: 'persian',
+    gender: 'female',
+    wikiQuery: 'شیرین',
+    enWikiQuery: 'Shirin',
+  },
+  'بهرام': {
+    meaning: 'پیروزمند، ستاره مریخ، فرشته پیروزی',
+    detail: 'بهرام نام ایزد پیروزی در آئین زرتشتی است. این نام از اوستایی «وِرِثرَغنَه» به معنای فاتح، پیروزمند گرفته شده و نام ستاره مریخ در فارسی نیز هست.',
+    origin: 'اوستایی - ایران باستان',
+    originTag: 'avestan',
+    gender: 'male',
+    wikiQuery: 'بهرام',
+    enWikiQuery: 'Bahram',
+  },
+  'زینب': {
+    meaning: 'درخت آراسته و خوشبو، مادر قبیله',
+    detail: 'زینب نامی عربی است که از «زین» به معنای زیور و آراستگی گرفته شده. برخی آن را به معنای عطر و بوی خوش می‌دانند.',
+    origin: 'عربی',
+    originTag: 'arabic',
+    gender: 'female',
+    wikiQuery: 'زینب بنت علی',
+    enWikiQuery: 'Zaynab bint Ali',
+  },
+  'علی': {
+    meaning: 'بلندمرتبه، والا، برتر، عالی',
+    detail: 'علی از ریشه عربی «عُلُوّ» به معنای بلندی و رفعت مقام است. این نام یکی از محبوب‌ترین نام‌های ایرانی و عربی در طول تاریخ بوده.',
+    origin: 'عربی',
+    originTag: 'arabic',
+    gender: 'male',
+    wikiQuery: 'علی بن ابی‌طالب',
+    enWikiQuery: 'Ali ibn Abi Talib',
+  },
+  'مریم': {
+    meaning: 'بانوی دریا، ستاره دریا، برگزیده',
+    detail: 'مریم نامی از ریشه عبری «مِریام» است که برخی آن را به معنای بانوی دریا و برخی به معنای کسی که خدا او را دوست دارد می‌دانند.',
+    origin: 'عبری - عربی',
+    originTag: 'arabic',
+    gender: 'female',
+    wikiQuery: 'مریم (مادر عیسی)',
+    enWikiQuery: 'Mary, mother of Jesus',
+  },
+  'داریوش': {
+    meaning: 'نگهبان نیکی، کسی که دارایی نیک دارد',
+    detail: 'داریوش از فارسی باستان «داریَوَهوش» به معنای «نگهدارنده‌ی نیکی» است. «داریَ» یعنی نگهدار و «وَهوش» یعنی نیک و خوب.',
+    origin: 'فارسی باستان',
+    originTag: 'persian',
+    gender: 'male',
+    wikiQuery: 'داریوش اول',
+    enWikiQuery: 'Darius I',
+  },
+  'ندا': {
+    meaning: 'صدا، ندا، آواز، بانگ',
+    detail: 'ندا از ریشه عربی «نِداء» به معنای صدا کردن، فریاد زدن و بانگ است. در فارسی به معنای آواز دلنشین و صدای دلپذیر استفاده می‌شود.',
+    origin: 'عربی',
+    originTag: 'arabic',
+    gender: 'female',
+    wikiQuery: 'ندا',
+    enWikiQuery: 'Neda',
+  },
+  'سیاوش': {
+    meaning: 'دارنده‌ی اسب سیاه',
+    detail: 'سیاوش از اوستایی «سیاووَرشَن» به معنای دارنده‌ی اسب سیاه است. این نام از پهلوانان اسطوره‌ای شاهنامه فردوسی است.',
+    origin: 'اوستایی - ایران باستان',
+    originTag: 'avestan',
+    gender: 'male',
+    wikiQuery: 'سیاوش',
+    enWikiQuery: 'Siavash',
+  },
+  'پریسا': {
+    meaning: 'زیبا چون پری، پری‌چهره',
+    detail: 'پریسا ترکیبی از «پری» (موجود افسانه‌ای زیبا) و پسوند «سا» به معنای مانند است، یعنی مانند پری و بسیار زیبا.',
+    origin: 'فارسی',
+    originTag: 'persian',
+    gender: 'female',
+    wikiQuery: 'پریسا',
+    enWikiQuery: 'Parisa',
+  },
+};
+
+// Famous people database
+const famousPeopleDB = {
+  'آرش': [
+    { name: 'آرش کمانگیر', desc: 'پهلوان اسطوره‌ای ایران باستان که تیری انداخت و مرز ایران را تا جای دوری برد', icon: '🏹', url: 'https://fa.wikipedia.org/wiki/آرش_کمانگیر' },
+    { name: 'آرش (خواننده)', desc: 'خواننده سوئدی-ایرانی که در مسابقات یوروویژن شرکت کرد', icon: '🎤', url: 'https://fa.wikipedia.org/wiki/آرش_(خواننده)' },
+    { name: 'آرش میراسماعیلی', desc: 'قهرمان جودو و المپیک ایران', icon: '🥋', url: 'https://fa.wikipedia.org/wiki/آرش_میراسماعیلی' },
+  ],
+  'فاطمه': [
+    { name: 'فاطمه زهرا (س)', desc: 'دختر پیامبر اسلام حضرت محمد (ص)، مادر امام حسن و امام حسین', icon: '🌸', url: 'https://fa.wikipedia.org/wiki/فاطمه_زهرا' },
+    { name: 'فاطمه معصومه', desc: 'خواهر امام رضا و از بزرگان مذهبی شیعه، آرامگاهش در قم', icon: '✨', url: 'https://fa.wikipedia.org/wiki/فاطمه_معصومه' },
+    { name: 'فاطمه موسوی', desc: 'کاراته‌کار المپیکی ایرانی', icon: '🥊', url: 'https://fa.wikipedia.org/wiki/فاطمه_موسوی' },
+  ],
+  'کوروش': [
+    { name: 'کوروش بزرگ', desc: 'بنیانگذار امپراتوری هخامنشی، ملقب به «پدر ایرانیان»، صادرکننده منشور حقوق بشر', icon: '👑', url: 'https://fa.wikipedia.org/wiki/کوروش_بزرگ' },
+    { name: 'کوروش دوم', desc: 'شاهزاده هخامنشی که در جنگ با برادرش اردشیر دوم کشته شد', icon: '⚔️', url: 'https://fa.wikipedia.org/wiki/کوروش_کوچک' },
+    { name: 'کوروش یغمایی', desc: 'خواننده و موسیقیدان محبوب ایرانی', icon: '🎵', url: 'https://fa.wikipedia.org/wiki/کوروش_یغمایی' },
+  ],
+  'نرگس': [
+    { name: 'نرگس محمدی', desc: 'فعال حقوق بشر ایرانی و برنده جایزه نوبل صلح ۲۰۲۳', icon: '🏆', url: 'https://fa.wikipedia.org/wiki/نرگس_محمدی' },
+    { name: 'نرگس آبیار', desc: 'کارگردان و فیلمساز برجسته ایرانی', icon: '🎬', url: 'https://fa.wikipedia.org/wiki/نرگس_آبیار' },
+    { name: 'نرگس بانو', desc: 'مادر امام زمان در باور شیعیان، همسر امام عسکری', icon: '✨', url: 'https://fa.wikipedia.org/wiki/نرجس' },
+  ],
+  'رستم': [
+    { name: 'رستم سهراب‌کش', desc: 'قهرمان بزرگ شاهنامه فردوسی، پهلوان ایران زمین', icon: '⚔️', url: 'https://fa.wikipedia.org/wiki/رستم' },
+    { name: 'رستم نظاروف', desc: 'سیاستمدار تاجیکستانی', icon: '🏛️', url: 'https://fa.wikipedia.org/wiki/رستم_امام‌علی' },
+    { name: 'رستم قاسموف', desc: 'شطرنج‌باز مشهور آذربایجانی با اصل و نسب فارسی', icon: '♟️', url: 'https://en.wikipedia.org/wiki/Rustam_Kasimdzhanov' },
+  ],
+  'شیرین': [
+    { name: 'شیرین (ملکه ساسانی)', desc: 'ملکه ساسانی، همسر خسرو پرویز، محبوب‌ترین شخصیت عاشقانه ادبیات فارسی', icon: '👸', url: 'https://fa.wikipedia.org/wiki/شیرین' },
+    { name: 'شیرین عبادی', desc: 'حقوقدان و فعال حقوق بشر ایرانی، برنده جایزه نوبل صلح ۲۰۰۳', icon: '🏆', url: 'https://fa.wikipedia.org/wiki/شیرین_عبادی' },
+    { name: 'شیرین نشاط', desc: 'هنرمند و فیلمساز مشهور ایرانی-آمریکایی', icon: '🎨', url: 'https://fa.wikipedia.org/wiki/شیرین_نشاط' },
+  ],
+  'بهرام': [
+    { name: 'بهرام چوبین', desc: 'سردار بزرگ ساسانی که یک‌بار شاه ایران شد', icon: '⚔️', url: 'https://fa.wikipedia.org/wiki/بهرام_چوبین' },
+    { name: 'بهرام گور', desc: 'شاه ساسانی مشهور به شکار گور (گورخر)، قهرمان داستان‌های بسیار', icon: '👑', url: 'https://fa.wikipedia.org/wiki/بهرام_پنجم' },
+    { name: 'بهرام بیضایی', desc: 'کارگردان، نمایشنامه‌نویس و محقق برجسته سینمای ایران', icon: '🎬', url: 'https://fa.wikipedia.org/wiki/بهرام_بیضایی' },
+  ],
+  'زینب': [
+    { name: 'زینب بنت علی', desc: 'دختر امام علی و حضرت فاطمه، قهرمان واقعه کربلا', icon: '✨', url: 'https://fa.wikipedia.org/wiki/زینب_بنت_علی' },
+    { name: 'زینب الغزالی', desc: 'رهبر زن مسلمان مصری و فعال اجتماعی', icon: '🌸', url: 'https://fa.wikipedia.org/wiki/زینب_الغزالی' },
+  ],
+  'علی': [
+    { name: 'علی بن ابی‌طالب', desc: 'چهارمین خلیفه مسلمانان و اول امام شیعیان، داماد پیامبر اسلام', icon: '✨', url: 'https://fa.wikipedia.org/wiki/علی_بن_ابی‌طالب' },
+    { name: 'علی دایی', desc: 'فوتبالیست مشهور ایرانی، سابق‌رکورددار گل بین‌الملل جهان', icon: '⚽', url: 'https://fa.wikipedia.org/wiki/علی_دایی' },
+    { name: 'علی شریعتی', desc: 'متفکر، جامعه‌شناس و انقلابی مشهور ایرانی', icon: '📚', url: 'https://fa.wikipedia.org/wiki/علی_شریعتی' },
+    { name: 'علی‌اکبر دهخدا', desc: 'ادیب، لغت‌نویس و مبارز مشروطه‌خواه ایرانی، مؤلف «لغتنامه دهخدا»', icon: '📖', url: 'https://fa.wikipedia.org/wiki/علی‌اکبر_دهخدا' },
+  ],
+  'مریم': [
+    { name: 'حضرت مریم', desc: 'مادر حضرت عیسی (ع)، محترم‌ترین زن در مسیحیت و اسلام', icon: '🌸', url: 'https://fa.wikipedia.org/wiki/مریم_(مادر_عیسی)' },
+    { name: 'مریم میرزاخانی', desc: 'ریاضیدان نابغه ایرانی، اولین زن برنده جایزه فیلدز (نوبل ریاضی)', icon: '🏆', url: 'https://fa.wikipedia.org/wiki/مریم_میرزاخانی' },
+    { name: 'مریم رجوی', desc: 'رهبر سازمان مجاهدین خلق ایران', icon: '🏛️', url: 'https://fa.wikipedia.org/wiki/مریم_رجوی' },
+  ],
+  'داریوش': [
+    { name: 'داریوش اول (هخامنشی)', desc: 'یکی از بزرگ‌ترین پادشاهان هخامنشی، سازنده تخت‌جمشید', icon: '👑', url: 'https://fa.wikipedia.org/wiki/داریوش_یکم' },
+    { name: 'داریوش اقبالی', desc: 'خواننده بسیار مشهور پاپ ایران', icon: '🎤', url: 'https://fa.wikipedia.org/wiki/داریوش_اقبالی' },
+    { name: 'داریوش مهرجویی', desc: 'کارگردان و فیلمساز برجسته سینمای ایران', icon: '🎬', url: 'https://fa.wikipedia.org/wiki/داریوش_مهرجویی' },
+  ],
+  'ندا': [
+    { name: 'ندا آقاسلطان', desc: 'جوانی که در اعتراضات ۱۳۸۸ ایران کشته شد و نمادی جهانی شد', icon: '🕊️', url: 'https://fa.wikipedia.org/wiki/ندا_آقا_سلطان' },
+    { name: 'ندا نوری', desc: 'بازیگر مشهور سینما و تلویزیون ایران', icon: '🎭', url: 'https://fa.wikipedia.org/wiki/ندا_نوری' },
+  ],
+  'سیاوش': [
+    { name: 'سیاوش (شخصیت شاهنامه)', desc: 'پهلوان پاک‌دامن شاهنامه فردوسی که از آتش بی‌گناه گذشت', icon: '🔥', url: 'https://fa.wikipedia.org/wiki/سیاوش' },
+    { name: 'سیاوش قمیشی', desc: 'خواننده محبوب پاپ ایرانی', icon: '🎵', url: 'https://fa.wikipedia.org/wiki/سیاوش_قمیشی' },
+    { name: 'سیاوش کسرایی', desc: 'شاعر بزرگ ایرانی، سراینده منظومه «آرش کمانگیر»', icon: '📜', url: 'https://fa.wikipedia.org/wiki/سیاوش_کسرایی' },
+  ],
+  'پریسا': [
+    { name: 'پریسا (خواننده)', desc: 'خواننده مشهور موسیقی سنتی ایران', icon: '🎶', url: 'https://fa.wikipedia.org/wiki/پریسا_(خواننده)' },
+  ],
+};
+
+// ============================================================
+//  WIKIPEDIA API (timeout-safe)
+// ============================================================
+const FETCH_TIMEOUT_MS = 6000;
+
+async function fetchJsonWithTimeout(url, timeout = FETCH_TIMEOUT_MS) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeout);
+  try {
+    const res = await fetch(url, { signal: controller.signal });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (err) {
+    console.warn('Wikipedia request failed:', err?.name || err);
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
+async function fetchWikipediaFA(query) {
+  const url = `https://fa.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&utf8=1&srlimit=5&origin=*`;
+  const data = await fetchJsonWithTimeout(url);
+  return data?.query?.search || [];
+}
+
+async function fetchWikipediaSummaryFA(title) {
+  const safeTitle = encodeURIComponent(String(title).trim().replace(/ /g, '_'));
+  const url = `https://fa.wikipedia.org/api/rest_v1/page/summary/${safeTitle}`;
+  return await fetchJsonWithTimeout(url);
+}
+
+async function fetchWikipediaSearchEN(query) {
+  const url = `https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch=${encodeURIComponent(query)}&format=json&utf8=1&srlimit=8&origin=*`;
+  const data = await fetchJsonWithTimeout(url);
+  return data?.query?.search || [];
+}
+
+async function fetchWikipediaSummaryEN(title) {
+  const safeTitle = encodeURIComponent(String(title).trim().replace(/ /g, '_'));
+  const url = `https://en.wikipedia.org/api/rest_v1/page/summary/${safeTitle}`;
+  return await fetchJsonWithTimeout(url);
+}
+
+// ============================================================
+//  HELPERS
+// ============================================================
+const $ = (id) => document.getElementById(id);
+let isSearching = false;
+
+const persianNameAliases = {
+  'ار ش': 'آرش',
+  'ارش': 'آرش',
+  'کورش': 'کوروش',
+  'فاطمهه': 'فاطمه',
+  'مريـم': 'مریم',
+};
+
+function escapeHtml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
+function stripHtml(html) {
+  const tmp = document.createElement('div');
+  tmp.innerHTML = String(html ?? '');
+  return tmp.textContent || tmp.innerText || '';
+}
+
+function normalizePersianName(name) {
+  return String(name ?? '')
+    .trim()
+    .replace(/[\u064B-\u065F\u0670]/g, '') // Arabic/Persian diacritics
+    .replace(/[يى]/g, 'ی')
+    .replace(/ك/g, 'ک')
+    .replace(/ة/g, 'ه')
+    .replace(/[أإٱ]/g, 'ا')
+    .replace(/ؤ/g, 'و')
+    .replace(/ۀ/g, 'ه')
+    .replace(/[ـ\u200c\u200f\u200e]/g, '')
+    .replace(/\s+/g, ' ');
+}
+
+function resolveName(rawName) {
+  const normalized = normalizePersianName(rawName);
+  if (persianNamesDB[normalized]) return normalized;
+  return persianNameAliases[normalized] || normalized;
+}
+
+function makeWikiUrl(lang, title) {
+  const safeTitle = encodeURIComponent(String(title || '').trim().replace(/ /g, '_'));
+  return `https://${lang}.wikipedia.org/wiki/${safeTitle}`;
+}
+
+function safeUrl(url) {
+  const value = String(url || '#').trim();
+  return /^https?:\/\//i.test(value) ? value : '#';
+}
+
+function setExample(name, autoSearch = true) {
+  $('nameInput').value = name;
+  $('nameInput').focus();
+  if (autoSearch) searchName();
+}
+
+function showLoading(text) {
+  $('loading').style.display = 'block';
+  $('results').style.display = 'none';
+  $('errorBox').style.display = 'none';
+  $('loadingText').textContent = text || 'در حال جستجو...';
+}
+
+function hideLoading() {
+  $('loading').style.display = 'none';
+}
+
+function showError(msg) {
+  hideLoading();
+  $('errorBox').style.display = 'block';
+  $('errorMsg').textContent = msg;
+  $('results').style.display = 'none';
+}
+
+function tagHtml(originTag) {
+  const map = {
+    persian: ['فارسی / ایرانی', 'tag-persian'],
+    arabic:  ['عربی', 'tag-arabic'],
+    avestan: ['اوستایی', 'tag-avestan'],
+    unknown: ['نامشخص', 'tag-unknown'],
+  };
+  const [label, cls] = map[originTag] || map.unknown;
+  return `<span class="origin-tag ${cls}">${escapeHtml(label)}</span>`;
+}
+
+function genderHtml(g) {
+  const map = { male: ['مردانه 🧔', 'gender-male'], female: ['زنانه 👩', 'gender-female'], unisex: ['دوجنسه 🌟', 'gender-unisex'] };
+  const [label, cls] = map[g] || ['نامشخص', 'gender-unisex'];
+  return `<span class="gender-tag ${cls}">${escapeHtml(label)}</span>`;
+}
+
+function renderMeaningCard(displayName, localData, wikiSummary) {
+  if (localData) {
+    return `
+      <div class="meaning-main">✦ ${escapeHtml(localData.meaning)}</div>
+      <div class="meaning-detail">${escapeHtml(localData.detail)}</div>
+      <div style="margin-top:14px;">
+        <strong>ریشه زبانی:</strong> ${tagHtml(localData.originTag)} ${escapeHtml(localData.origin)}
+      </div>
+      <div style="margin-top:8px;">
+        <strong>جنسیت:</strong> ${genderHtml(localData.gender)}
+      </div>
+    `;
+  }
+
+  let guessedMeaning = 'اطلاعاتی در پایگاه داده محلی یافت نشد.';
+  if (wikiSummary?.extract) {
+    guessedMeaning = wikiSummary.extract.substring(0, 300) + (wikiSummary.extract.length > 300 ? '...' : '');
+  }
+  return `
+    <div class="meaning-main">🔍 ${escapeHtml(displayName)}</div>
+    <div class="meaning-detail">${escapeHtml(guessedMeaning)}</div>
+    <div style="margin-top:12px; font-size:0.85rem; color: rgba(200,184,154,0.6);">
+      ⚠️ این نام در پایگاه داده محلی موجود نیست. اطلاعات موجود، در صورت یافت‌شدن، از ویکی‌پدیا دریافت شده است.
+    </div>
+  `;
+}
+
+function renderWikiCard(displayName, wikiSummary, faUrl) {
+  if (!wikiSummary?.extract) {
+    const faSearch = `https://fa.wikipedia.org/w/index.php?search=${encodeURIComponent(displayName)}`;
+    return `<div class="no-people">اطلاعاتی در ویکی‌پدیا فارسی برای این نام یافت نشد.<br><br>
+      <a href="${faSearch}" target="_blank" rel="noopener noreferrer" class="source-badge source-fa" style="display:inline-flex">
+        🔍 جستجو در ویکی‌پدیا فارسی
+      </a>
+    </div>`;
+  }
+
+  const extract = wikiSummary.extract.substring(0, 500) + (wikiSummary.extract.length > 500 ? '...' : '');
+  const image = wikiSummary.thumbnail?.source && /^https?:\/\//i.test(wikiSummary.thumbnail.source)
+    ? `<div style="margin-top:14px;text-align:center;">
+         <img src="${escapeHtml(wikiSummary.thumbnail.source)}" alt="${escapeHtml(displayName)}"
+           loading="lazy"
+           style="max-height:160px; max-width:100%; border-radius:12px; border:2px solid rgba(201,168,76,0.3); box-shadow:0 4px 20px rgba(0,0,0,0.5);" />
+       </div>`
+    : '';
+
+  return `
+    <div class="wiki-excerpt">${escapeHtml(extract)}</div>
+    ${image}
+    <div style="margin-top:14px;">
+      <a href="${escapeHtml(faUrl)}" target="_blank" rel="noopener noreferrer" class="source-badge source-fa">
+        🔗 خواندن کامل در ویکی‌پدیا فارسی
+      </a>
+    </div>
+  `;
+}
+
+function renderPeopleCard(displayName, localPeople, enPeople) {
+  if (localPeople.length === 0 && enPeople.length === 0) {
+    const faSearch = `https://fa.wikipedia.org/w/index.php?search=${encodeURIComponent(displayName)}`;
+    return `<div class="no-people">
+      👤 هیچ شخصیت مشهوری برای این نام در پایگاه داده یافت نشد.<br>
+      <a href="${faSearch}" target="_blank" rel="noopener noreferrer" class="source-badge source-fa" style="margin-top:14px; display:inline-flex">
+        🔍 جستجو در ویکی‌پدیا
+      </a>
+    </div>`;
+  }
+
+  let html = '<div class="people-list">';
+  for (const p of localPeople) {
+    html += `
+      <div class="person-item">
+        <div class="person-avatar">${escapeHtml(p.icon || '👤')}</div>
+        <div class="person-info">
+          <div class="person-name">${escapeHtml(p.name)}</div>
+          <div class="person-desc">${escapeHtml(p.desc)}</div>
+          <a href="${escapeHtml(safeUrl(p.url))}" target="_blank" rel="noopener noreferrer" class="person-link">📖 ویکی‌پدیا فارسی ↗</a>
+        </div>
+      </div>
+    `;
+  }
+
+  for (const p of enPeople) {
+    html += `
+      <div class="person-item">
+        <div class="person-avatar">🌍</div>
+        <div class="person-info">
+          <div class="person-name">${escapeHtml(p.title)}</div>
+          <div class="person-desc" dir="ltr" style="text-align:left;">${escapeHtml(p.snippet)}</div>
+          <a href="${escapeHtml(safeUrl(p.url))}" target="_blank" rel="noopener noreferrer" class="person-link">📖 Wikipedia (EN) ↗</a>
+        </div>
+      </div>
+    `;
+  }
+
+  return html + '</div>';
+}
+
+function renderSourcesCard(displayName) {
+  const googleUrl = `https://www.google.com/search?q=معنی+نام+${encodeURIComponent(displayName)}`;
+  const faSearchUrl = `https://fa.wikipedia.org/w/index.php?search=${encodeURIComponent(displayName)}`;
+  const enSearchUrl = `https://en.wikipedia.org/w/index.php?search=${encodeURIComponent(displayName)}`;
+  return `
+    <p class="card-body" style="margin-bottom:16px;">برای مشاهده اطلاعات بیشتر، به منابع زیر مراجعه کنید:</p>
+    <div class="sources-row">
+      <a href="${faSearchUrl}" target="_blank" rel="noopener noreferrer" class="source-badge source-fa">📚 ویکی‌پدیا فارسی</a>
+      <a href="${enSearchUrl}" target="_blank" rel="noopener noreferrer" class="source-badge source-en">📖 Wikipedia (English)</a>
+      <a href="${googleUrl}" target="_blank" rel="noopener noreferrer" class="source-badge source-fa" style="background:rgba(80,160,80,0.2); color:#80ff80; border-color:rgba(80,160,80,0.4);">🔍 جستجوی گوگل</a>
+    </div>
+    <p style="margin-top:16px; font-size:0.8rem; color:rgba(200,184,154,0.5);">
+      اطلاعات این سایت از ویکی‌پدیا فارسی، ویکی‌پدیا انگلیسی و پایگاه داده اسامی فارسی تهیه شده است.
+    </p>
+  `;
+}
+
+// ============================================================
+//  MAIN SEARCH FUNCTION
+// ============================================================
+async function searchName() {
+  if (isSearching) return;
+
+  const rawInput = $('nameInput').value;
+  const rawName = rawInput.trim();
+  if (!rawName) {
+    showError('لطفاً یک نام فارسی وارد کنید.');
+    return;
+  }
+  if (rawName.length > 40) {
+    showError('لطفاً فقط یک نام کوتاه وارد کنید.');
+    return;
+  }
+
+  const displayName = resolveName(rawName);
+  const localData = persianNamesDB[displayName];
+  const localPeople = famousPeopleDB[displayName] || [];
+  const btn = $('searchBtn');
+
+  isSearching = true;
+  btn.disabled = true;
+  btn.textContent = '⏳ در حال جستجو...';
+  showLoading('در حال آماده‌سازی نتایج...');
+
+  try {
+    let wikiSummary = null;
+    let faUrl = null;
+
+    $('loadingText').textContent = '🔍 جستجو در ویکی‌پدیا فارسی...';
+    if (localData?.wikiQuery) {
+      wikiSummary = await fetchWikipediaSummaryFA(localData.wikiQuery);
+    }
+    if (!wikiSummary) {
+      const faResults = await fetchWikipediaFA(displayName);
+      if (faResults.length > 0) {
+        wikiSummary = await fetchWikipediaSummaryFA(faResults[0].title);
+      }
+    }
+    if (wikiSummary?.title) {
+      faUrl = makeWikiUrl('fa', wikiSummary.title);
+    } else {
+      faUrl = `https://fa.wikipedia.org/w/index.php?search=${encodeURIComponent(displayName)}`;
+    }
+
+    $('loadingText').textContent = '🌍 جستجو در ویکی‌پدیا انگلیسی برای اشخاص مشهور...';
+    const enQuery = localData?.enWikiQuery || `${displayName} (name)`;
+    const enResults = await fetchWikipediaSearchEN(enQuery);
+    const enPeople = [];
+    const personKeywords = ['politician','athlete','actor','actress','singer','poet','writer','footballer','player','scholar','philosopher','queen','king','general','scientist','artist','director'];
+    for (const r of enResults.slice(0, 6)) {
+      const snip = stripHtml(r.snippet || '').toLowerCase();
+      const title = r.title || '';
+      if (personKeywords.some(k => snip.includes(k)) || /[A-Z][a-z]+ [A-Z][a-z]+/.test(title)) {
+        const plainSnip = stripHtml(r.snippet || '').replace(/&quot;/g, '"').trim();
+        enPeople.push({
+          title,
+          snippet: (plainSnip.substring(0, 140) + (plainSnip.length > 140 ? '...' : '')),
+          url: makeWikiUrl('en', r.title),
+        });
+      }
+      if (enPeople.length >= 4) break;
+    }
+
+    hideLoading();
+    $('results').style.display = 'block';
+    $('errorBox').style.display = 'none';
+    $('resultName').textContent = displayName;
+    if (displayName !== normalizePersianName(rawName)) {
+      $('nameInput').value = displayName;
+    }
+
+    $('meaningContent').innerHTML = renderMeaningCard(displayName, localData, wikiSummary);
+    $('wikiContent').innerHTML = renderWikiCard(displayName, wikiSummary, faUrl);
+    $('peopleContent').innerHTML = renderPeopleCard(displayName, localPeople, enPeople);
+    $('sourcesContent').innerHTML = renderSourcesCard(displayName);
+
+    $('results').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+  } catch (err) {
+    console.error(err);
+    showError('خطا در دریافت اطلاعات. لطفاً اتصال اینترنت خود را بررسی کنید و دوباره تلاش کنید.');
+  } finally {
+    isSearching = false;
+    btn.disabled = false;
+    btn.textContent = '🔍 جستجو';
+  }
+}
+
+// Enter key support
+document.getElementById('nameInput').addEventListener('keydown', function(e) {
+  if (e.key === 'Enter') searchName();
+});
+</script>
+
+<footer style="position:relative;z-index:20;text-align:center;padding:30px 15px 40px;color:#c8b89a;font-size:0.95rem;">
+  <div style="margin-bottom:8px;">
+    ساخته شده توسط <strong style="color:#f0d080;">Ashkan Team Web</strong>
+  </div>
+  <div>
+    <strong style="color:#f0d080;">Contributions &amp; Updates:</strong> Mahdi Sharifi
+  </div>
+</footer>
+
+</body>
+</html>
+
+<script>
+if ('serviceWorker' in navigator) {
+ window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js'));
+}
+</script>
