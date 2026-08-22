@@ -36,19 +36,9 @@ A modern Progressive Web App for searching and exploring Persian names.
 - 🎨 رابط کاربری ساده و مدرن
 - 💻 سازگار با مرورگرهای جدید
 
-## 🚀 اجرا
-
-```bash
-git clone https://github.com/MR-SHARIFI-Dev/persian-name-finder.git
-cd persian-name-finder
-```
-
-سپس فایل `index.html` را اجرا کنید یا از یک سرور محلی استفاده کنید:
-
-```bash
-python -m http.server
-```
-
+###اجرا
+https://kourosh242.github.io/Persian-name-finder/
+بر روی لینک بالا کلیک کنید
 ## 📦 ساختار پروژه
 
 ```
