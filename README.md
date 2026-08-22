@@ -39,7 +39,7 @@ A modern Progressive Web App for searching and exploring Persian names.
 ## 🚀 اجرا
 
 ```bash
-git clone https://github.com/yourusername/persian-name-finder.git
+git clone https://github.com/MR-SHARIFI-Dev/persian-name-finder.git
 cd persian-name-finder
 ```
 
@@ -107,7 +107,7 @@ It is built with a focus on performance, accessibility, responsive design, and i
 ## 🚀 Installation
 
 ```bash
-git clone https://github.com/yourusername/persian-name-finder.git
+git clone https://github.com/MR-SHARIFI-Dev/persian-name-finder.git
 cd persian-name-finder
 ```
 
