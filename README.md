@@ -36,8 +36,10 @@ A modern Progressive Web App for searching and exploring Persian names.
 - 🎨 رابط کاربری ساده و مدرن
 - 💻 سازگار با مرورگرهای جدید
 
-###اجرا
+### اجرا
+
 https://kourosh242.github.io/Persian-name-finder/
+
 بر روی لینک بالا کلیک کنید
 ## 📦 ساختار پروژه
 
