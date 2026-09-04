@@ -1,18 +1,18 @@
 **🌙 ویکی معنایاب نام فارسی**
 
-- [[Home|🏠 خانه]]
-- [[Features|✨ امکانات]]
-- [[Search-Engine|🔎 موتور جستجو]]
-- [[Wikipedia-Integration|🌐 ویکی‌پدیا]]
-- [[Name-Database|📚 پایگاه دادهٔ نام‌ها]]
-- [[Deployment|🚀 استقرار و اجرا]]
-- [[Versions|🧭 مقایسهٔ نسخه‌ها]]
-- [[FAQ|❓ سوالات متداول]]
-- [[Roadmap|🗺 نقشهٔ راه]]
-- [[Contributing|🤝 مشارکت]]
+- [[🏠 خانه|Home]]
+- [[✨ امکانات|Features]]
+- [[🔎 موتور جستجو|Search-Engine]]
+- [[🌐 ویکی‌پدیا|Wikipedia-Integration]]
+- [[📚 پایگاه دادهٔ نام‌ها|Name-Database]]
+- [[🚀 استقرار و اجرا|Deployment]]
+- [[🧭 نسخه‌ها|Versions]]
+- [[❓ سوالات متداول|FAQ]]
+- [[🗺 نقشهٔ راه|Roadmap]]
+- [[🤝 مشارکت|Contributing]]
 
 ---
 
-- 🚀 [اپ نسخهٔ ۲](https://kourosh242.github.io/Persian-name-finder/v2/)
-- 📖 [ویکی آنلاین](https://kourosh242.github.io/Persian-name-finder/wiki/)
+- 🚀 [اپ معنایاب نام فارسی](https://kourosh242.github.io/Persian-name-finder/)
 - 🗂 [مخزن گیت‌هاب](https://github.com/Kourosh242/Persian-name-finder)
+- 🌐 [آینهٔ ویکی روی Pages](https://kourosh242.github.io/Persian-name-finder/wiki/)

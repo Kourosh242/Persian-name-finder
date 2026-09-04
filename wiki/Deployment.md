@@ -4,10 +4,10 @@
 
 | مسیر مخزن | URL زنده | محتوا |
 |:---|:---|:---|
-| `/` (index.html) | <https://kourosh242.github.io/Persian-name-finder/> | نسخهٔ ۱ (PWA) |
-| `/v2/` (v2/index.html) | <https://kourosh242.github.io/Persian-name-finder/v2/> | ✨ **نسخهٔ ۲** |
-| `/wiki/` (wiki/index.html) | <https://kourosh242.github.io/Persian-name-finder/wiki/> | 📖 ویکی آنلاین |
-| `/Persian-name-founder-v2.html` | <https://kourosh242.github.io/Persian-name-finder/Persian-name-founder-v2.html> | سورس خام نسخهٔ ۲ |
+| `/` (`index.html`) | <https://kourosh242.github.io/Persian-name-finder/> | ✨ **اپ — همیشه آخرین نسخه** |
+| `/v2/` (`v2/index.html`) | <https://kourosh242.github.io/Persian-name-finder/v2/> | ↪️ ریدایرکت به ریشه (سازگاری لینک‌های قدیمی) |
+| `/wiki/` (`wiki/index.html`) | <https://kourosh242.github.io/Persian-name-finder/wiki/> | 📖 آینهٔ ویکی |
+| — | <https://github.com/Kourosh242/Persian-name-finder/wiki> | 📖 **ویکی رسمی گیت‌هاب** |
 
 ## سازوکار استقرار
 
@@ -17,13 +17,25 @@
 push / merge به main ──▶ GitHub Pages build ──▶ ▲ به‌روزرسانی خودکار سایت
 ```
 
-### افزودن نسخهٔ جدید در آینده
+### 🧭 قانون طلایی: یک آدرس ثابت
 
-1. یک پوشهٔ `vN/index.html` بسازید و فایل تک‌فایلی اپ را در آن قرار دهید.
-2. به `main` merge کنید؛ نسخهٔ جدید در آدرس `/vN/` زنده می‌شود.
-3. لینک را در `README.md` و `CHANGELOG.md` ثبت کنید.
+اپ **فقط** روی ریشه (`/`) منتشر می‌شود. پوشهٔ نسخه‌دار (`/v2/`, `/v3/`, …) نمی‌سازیم.
 
-> 💡 نسخهٔ ۱ یک PWA کامل است (`manifest.json` + `sw.js` + آیکون‌ها) که از ریشهٔ سایت سرو می‌شود؛ نسخهٔ ۲ کاملاً تک‌فایلی است و به هیچ فایل جانبی نیاز ندارد.
+**انتشار نسخهٔ بعدی (مثلاً ۳):**
+
+1. فایل تک‌فایلی نسخهٔ جدید را **جایگزین `index.html` ریشه** کنید.
+2. شمارهٔ نسخه را در `CHANGELOG.md` و صفحهٔ [[Versions]] ثبت کنید.
+3. merge به `main` — همان آدرس همیشگی حالا نسخهٔ ۳ را نشان می‌دهد. تمام.
+
+> ⚠️ هیچ لینک جدیدی منتشر نکنید؛ کاربران فقط یک آدرس را می‌شناسند:
+> <https://kourosh242.github.io/Persian-name-finder/>
+
+### 🗄 بازنشستگی نسخهٔ ۱ و PWA
+
+- `manifest.json` حذف شد (PWA کنار گذاشته شد).
+- `sw.js` به یک **سرویس‌ورکر kill-switch** تبدیل شد: در `activate` همهٔ کش‌ها را پاک می‌کند، `registration.unregister()` می‌زند و تب‌های باز را reload می‌کند.
+- در `index.html` هم یک اسکریپت کوچک، سرویس‌ورکرهای باقی‌مانده و کش‌های قدیمی مرورگر را پاک می‌کند.
+- در نتیجه کاربرانی که نسخهٔ ۱ را روی گوشی «نصب» کرده بودند، به‌جای نسخهٔ کش‌شدهٔ قدیمی، اپ به‌روز را می‌بینند.
 
 ## اجرای محلی
 
@@ -35,20 +47,24 @@ cd Persian-name-finder
 python3 -m http.server 8000
 ```
 
-سپس: <http://localhost:8000/> (v1) · <http://localhost:8000/v2/> (v2) · <http://localhost:8000/wiki/>
+سپس: <http://localhost:8000/> (اپ) · <http://localhost:8000/wiki/> (ویکی)
 
-**روش ۲ — اجرای مستقیم:** فایل `Persian-name-founder-v2.html` را در مرورگر باز کنید (دابل‌کلیک).
+**روش ۲ — اجرای مستقیم:** فایل `index.html` را در مرورگر باز کنید (دابل‌کلیک).
 
 > ⚠️ توجه: برای اتصال به ویکی‌پدیا باید اینترنت فعال باشد؛ پایگاه محلی ۱۰۰ نام کاملاً آفلاین کار می‌کند.
 
-## سینک markdown ویکی با GitHub Wiki (اختیاری)
+## 📖 همگام‌سازی ویکی با GitHub Wiki
 
-پوشهٔ `wiki/` شامل سورس‌های markdown (`Home.md`، `_Sidebar.md` و…) است. اگر بخواهید همین محتوا در **ویکیِ رسمی گیت‌هاب** مخزن هم نمایش داده شود، ابتدا از تب Wiki مخزن یک صفحهٔ اولیه بسازید، سپس:
+سورس markdown همهٔ صفحات ویکی در پوشهٔ `wiki/` مخزن نگهداری می‌شود و **ویکی رسمی گیت‌هاب** از همین فایل‌ها تغذیه می‌شود.
 
 ```bash
-git clone https://github.com/Kourosh242/Persian-name-finder.wiki.git
-cp wiki/*.md Persian-name-finder.wiki/
-cd Persian-name-finder.wiki && git add -A && git commit -m "sync wiki" && git push
+# پیش‌نیاز: یک صفحه در تب Wiki مخزن ساخته شده باشد (فقط بار اول، از رابط گیت‌هاب)
+./scripts/publish-wiki.sh
 ```
+
+اسکریپت `scripts/publish-wiki.sh` مخزن `Persian-name-finder.wiki.git` را کلون می‌کند، فایل‌های `wiki/*.md` را کپی و push می‌کند. بعد از آن، صفحات در
+<https://github.com/Kourosh242/Persian-name-finder/wiki> در دسترس‌اند.
+
+> 💡 نسخهٔ HTML ویکی (`wiki/index.html`) به‌عنوان **آینه** روی GitHub Pages باقی می‌ماند؛ ویکی مرجع، GitHub Wiki است.
 
 ← بازگشت به [[Home]]
