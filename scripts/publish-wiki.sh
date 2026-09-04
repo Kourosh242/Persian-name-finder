@@ -45,7 +45,14 @@ fi
 cp "${SRC_DIR}"/*.md "${TMP_DIR}/wiki/"
 
 cd "${TMP_DIR}/wiki"
-if git diff --quiet && git diff --cached --quiet && [ -z "$(git status --porcelain)" ]; then
+
+# هویت گیت برای کامیت (از تنظیمات مخزن اصلی، وگرنه مقدار پیش‌فرض)
+GIT_NAME="$(git -C "${ROOT_DIR}" config user.name || true)"
+GIT_EMAIL="$(git -C "${ROOT_DIR}" config user.email || true)"
+git config user.name  "${GIT_NAME:-Persian Name Finder Wiki Bot}"
+git config user.email "${GIT_EMAIL:-wiki-bot@users.noreply.github.com}"
+
+if [ -z "$(git status --porcelain)" ]; then
   echo "✅ ویکی از قبل به‌روز است — تغییری برای انتشار نیست."
   exit 0
 fi

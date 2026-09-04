@@ -1,15 +1,15 @@
 **🌙 ویکی معنایاب نام فارسی**
 
-- [[Home|🏠 خانه]]
-- [[Features|✨ امکانات]]
-- [[Search-Engine|🔎 موتور جستجو]]
-- [[Wikipedia-Integration|🌐 ویکی‌پدیا]]
-- [[Name-Database|📚 پایگاه دادهٔ نام‌ها]]
-- [[Deployment|🚀 استقرار و اجرا]]
-- [[Versions|🧭 نسخه‌ها]]
-- [[FAQ|❓ سوالات متداول]]
-- [[Roadmap|🗺 نقشهٔ راه]]
-- [[Contributing|🤝 مشارکت]]
+- [[🏠 خانه|Home]]
+- [[✨ امکانات|Features]]
+- [[🔎 موتور جستجو|Search-Engine]]
+- [[🌐 ویکی‌پدیا|Wikipedia-Integration]]
+- [[📚 پایگاه دادهٔ نام‌ها|Name-Database]]
+- [[🚀 استقرار و اجرا|Deployment]]
+- [[🧭 نسخه‌ها|Versions]]
+- [[❓ سوالات متداول|FAQ]]
+- [[🗺 نقشهٔ راه|Roadmap]]
+- [[🤝 مشارکت|Contributing]]
 
 ---
 
