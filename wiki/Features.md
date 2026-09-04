@@ -1,6 +1,6 @@
 # ✨ امکانات | Features
 
-فهرست کامل قابلیت‌های **نسخهٔ ۲.۰** (فایل `Persian-name-founder-v2.html`).
+فهرست کامل قابلیت‌های اپ (تک‌فایل `index.html` در ریشهٔ مخزن، زنده روی <https://kourosh242.github.io/Persian-name-finder/>).
 
 ## 🔎 جستجو
 

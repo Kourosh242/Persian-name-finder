@@ -6,12 +6,10 @@
 **ریشه، معنا و چهره‌های مشهور هر نام فارسی را کشف کنید**
 *Discover the root, meaning and famous bearers of every Persian name*
 
-**نسخهٔ ۲.۰ منتشر شد! 🎉** — با جستجوی هوشمند، تحمل املای نادرست و اتصال زنده به ویکی‌پدیا
-
-[![GitHub Pages V2](https://img.shields.io/website?label=%F0%9F%9A%80%20GitHub%20Pages%20V2&style=for-the-badge&url=https%3A%2F%2Fkourosh242.github.io%2FPersian-name-finder%2Fv2%2F)](https://kourosh242.github.io/Persian-name-finder/v2/)
-[![GitHub Wiki](https://img.shields.io/badge/%F0%9F%93%96%20Wiki-%D9%88%DB%8C%DA%A9%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87-gold?style=for-the-badge&color=e8c15a)](https://kourosh242.github.io/Persian-name-finder/wiki/)
+[![Live App](https://img.shields.io/website?label=%F0%9F%9A%80%20%D8%A7%D9%BE%20%D8%B2%D9%86%D8%AF%D9%87&style=for-the-badge&url=https%3A%2F%2Fkourosh242.github.io%2FPersian-name-finder%2F)](https://kourosh242.github.io/Persian-name-finder/)
+[![GitHub Wiki](https://img.shields.io/badge/%F0%9F%93%96%20Wiki-%D9%88%DB%8C%DA%A9%DB%8C%20%D8%B1%D8%B3%D9%85%DB%8C%20%D9%BE%D8%B1%D9%88%DA%98%D9%87-e8c15a?style=for-the-badge)](https://github.com/Kourosh242/Persian-name-finder/wiki)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)](LICENSE)
-[![Version](https://img.shields.io/badge/Version-2.0.0-e8c15a?style=for-the-badge)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/Version-2.0.1-e8c15a?style=for-the-badge)](CHANGELOG.md)
 
 </div>
 
@@ -19,13 +17,16 @@
 
 > ## 🚀 همین حالا استفاده کنید — بدون نصب!
 >
-> | نسخه | لینک زنده | توضیح |
-> |:---:|:---|:---|
-> | **✨ نسخهٔ ۲ (جدید)** | **<https://kourosh242.github.io/Persian-name-finder/v2/>** | معنایاب حرفه‌ای با جستجوی فازی و ویکی‌پدیا |
-> | 📘 نسخهٔ ۱ | <https://kourosh242.github.io/Persian-name-finder/> | نسخهٔ کلاسیک (قابل نصب به‌صورت PWA) |
-> | 📖 ویکی پروژه | <https://kourosh242.github.io/Persian-name-finder/wiki/> | مستندات کامل، معماری و راهنما |
+> # **<https://kourosh242.github.io/Persian-name-finder/>**
 >
-> **کاربران گرامی:** لطفاً برای تجربهٔ کامل، از **[نسخهٔ ۲](https://kourosh242.github.io/Persian-name-finder/v2/)** استفاده کنید — سریع‌تر، هوشمندتر و بدون نیاز به نصب است. 💛
+> | منبع | لینک | توضیح |
+> |:---:|:---|:---|
+> | ✨ **اپ** | **<https://kourosh242.github.io/Persian-name-finder/>** | همیشه آخرین نسخه، روی همین یک آدرس |
+> | 📖 **ویکی رسمی** | <https://github.com/Kourosh242/Persian-name-finder/wiki> | مستندات کامل، معماری و راهنما |
+> | 🌐 آینهٔ ویکی | <https://kourosh242.github.io/Persian-name-finder/wiki/> | همان مستندات با ظاهر اختصاصی |
+>
+> 🧭 **یک اپ، یک آدرس:** نسخه‌های بعدی (۳، ۴ و…) روی همین آدرس جای نسخهٔ قبل را می‌گیرند؛ لینکی که به اشتراک می‌گذارید هیچ‌وقت قدیمی نمی‌شود.
+> 🗄 نسخهٔ ۱ **بازنشسته شد** — جزئیات در [صفحهٔ نسخه‌ها در ویکی](https://github.com/Kourosh242/Persian-name-finder/wiki/Versions).
 
 ---
 
@@ -33,11 +34,11 @@
 
 ## ✨ معرفی
 
-**معنایاب نام فارسی (نسخهٔ ۲.۰)** یک اپلیکیشن تحت وبِ تک‌فایلی و بدون وابستگی است که برای **کشف ریشه، معنا و چهره‌های مشهور نام‌های فارسی** ساخته شده است.
+**معنایاب نام فارسی** یک اپلیکیشن تحت وبِ تک‌فایلی و بدون وابستگی است که برای **کشف ریشه، معنا و چهره‌های مشهور نام‌های فارسی** ساخته شده است.
 
-نسخهٔ ۲ از صفر بازطراحی شده و یک **موتور جستجوی هوشمند** دارد که حتی با املای نادرست هم نام موردنظر شما را پیدا می‌کند؛ علاوه بر پایگاه دادهٔ محلی ۱۰۰ نام، به‌صورت زنده به **ویکی‌پدیا فارسی و انگلیسی** هم وصل می‌شود و برای نام‌های ناشناخته، **تحلیل ریشهٔ زبانی** ارائه می‌دهد.
+این اپ یک **موتور جستجوی هوشمند** دارد که حتی با املای نادرست هم نام موردنظر شما را پیدا می‌کند؛ علاوه بر پایگاه دادهٔ محلی ۱۰۰ نام، به‌صورت زنده به **ویکی‌پدیا فارسی و انگلیسی** هم وصل می‌شود و برای نام‌های ناشناخته، **تحلیل ریشهٔ زبانی** ارائه می‌دهد.
 
-## 🌟 امکانات نسخهٔ ۲
+## 🌟 امکانات
 
 | امکان | توضیح |
 |:---|:---|
@@ -52,46 +53,48 @@
 | 🎨 **تم شب طلایی** | طراحی لوکس و روان با فونت وزیرمتن، انیمیشن‌های ظریف و پشتیبانی کامل RTL |
 | ♿ **دسترس‌پذیری** | احترام به `prefers-reduced-motion`، اعداد فارسی و کنتراست رنگی مناسب |
 
-
-📄 شرح کامل الگوریتم‌ها در ویکی: [موتور جستجو](wiki/Search-Engine.md) · [یکپارچه‌سازی ویکی‌پدیا](wiki/Wikipedia-Integration.md) · [پایگاه دادهٔ نام‌ها](wiki/Name-Database.md)
+📄 شرح کامل الگوریتم‌ها در ویکی:
+[موتور جستجو](https://github.com/Kourosh242/Persian-name-finder/wiki/Search-Engine) ·
+[یکپارچه‌سازی ویکی‌پدیا](https://github.com/Kourosh242/Persian-name-finder/wiki/Wikipedia-Integration) ·
+[پایگاه دادهٔ نام‌ها](https://github.com/Kourosh242/Persian-name-finder/wiki/Name-Database)
 
 ## 📦 ساختار پروژه
 
 ```
 Persian-name-finder/
 │
-├── index.html                      # نسخهٔ ۱ (PWA کلاسیک) → / 
-├── manifest.json                   # مانیفست PWA (نسخهٔ ۱)
-├── sw.js                           # سرویس‌ورکر (نسخهٔ ۱)
-├── icons/                          # آیکون‌های PWA
-├── Persian-name-founder-v2.html    # 📄 سورس تک‌فایلی نسخهٔ ۲
-├── v2/
-│   └── index.html                  # ✨ نسخهٔ ۲ مستقر روی GitHub Pages → /v2/
+├── index.html              # ✨ کل اپ در یک فایل — همان چیزی که روی / سرو می‌شود
+├── sw.js                   # سرویس‌ورکر پاک‌کنندهٔ میراث PWA نسخهٔ ۱ (kill-switch)
+├── icons/                  # آیکون‌های پروژه (og:image و برندینگ)
+├── v2/index.html           # ↪️ ریدایرکت مسیر قدیمی /v2/ به ریشه
 ├── wiki/
-│   ├── index.html                  # 📖 ویکی آنلاین (روی GitHub Pages) → /wiki/
-│   ├── Home.md … _Sidebar.md       # سورس markdown ویکی (آمادهٔ GitHub Wiki)
+│   ├── Home.md … _Sidebar.md   # 📖 سورس ویکی رسمی گیت‌هاب
+│   └── index.html              # 🌐 آینهٔ ویکی روی GitHub Pages
+├── scripts/publish-wiki.sh # انتشار wiki/*.md روی GitHub Wiki
 ├── README.md
 └── CHANGELOG.md
 ```
 
 ## 📖 ویکی پروژه
 
-مستندات کامل پروژه در **[ویکی آنلاین](https://kourosh242.github.io/Persian-name-finder/wiki/)** در دسترس است:
+مستندات کامل در **[ویکی رسمی گیت‌هاب](https://github.com/Kourosh242/Persian-name-finder/wiki)** است (سورس markdown در پوشهٔ [`wiki/`](wiki)):
 
-- [خانه](wiki/Home.md) — نقشهٔ کلی پروژه و لینک‌ها
-- [امکانات](wiki/Features.md) — فهرست کامل قابلیت‌ها
-- [موتور جستجو](wiki/Search-Engine.md) — normalize، امتیازدهی و Levenshtein
-- [ویکی‌پدیا](wiki/Wikipedia-Integration.md) — API ها، timeout و لغو درخواست
-- [پایگاه دادهٔ نام‌ها](wiki/Name-Database.md) — ساختار رکورد‌ها و راهنمای افزودن نام
-- [استقرار](wiki/Deployment.md) — راهنمای کامل GitHub Pages
-- [نسخه‌ها](wiki/Versions.md) — مقایسهٔ v1 و v2
-- [سوالات متداول](wiki/FAQ.md) و [نقشهٔ راه](wiki/Roadmap.md)
+- [خانه](https://github.com/Kourosh242/Persian-name-finder/wiki/Home) — نقشهٔ کلی پروژه و لینک‌ها
+- [امکانات](https://github.com/Kourosh242/Persian-name-finder/wiki/Features) — فهرست کامل قابلیت‌ها
+- [موتور جستجو](https://github.com/Kourosh242/Persian-name-finder/wiki/Search-Engine) — normalize، امتیازدهی و Levenshtein
+- [ویکی‌پدیا](https://github.com/Kourosh242/Persian-name-finder/wiki/Wikipedia-Integration) — API ها، timeout و لغو درخواست
+- [پایگاه دادهٔ نام‌ها](https://github.com/Kourosh242/Persian-name-finder/wiki/Name-Database) — ساختار رکورد‌ها و راهنمای افزودن نام
+- [استقرار](https://github.com/Kourosh242/Persian-name-finder/wiki/Deployment) — راهنمای کامل GitHub Pages
+- [نسخه‌ها](https://github.com/Kourosh242/Persian-name-finder/wiki/Versions) — سیاست «یک آدرس ثابت» و بازنشستگی نسخهٔ ۱
+- [سوالات متداول](https://github.com/Kourosh242/Persian-name-finder/wiki/FAQ) و [نقشهٔ راه](https://github.com/Kourosh242/Persian-name-finder/wiki/Roadmap)
+
+> 🔄 برای به‌روزرسانی ویکی، فایل‌های `wiki/*.md` را ویرایش و سپس `./scripts/publish-wiki.sh` را اجرا کنید.
 
 ## 🤝 مشارکت
 
 1. پروژه را **Fork** کنید
 2. شاخهٔ جدید بسازید: `git checkout -b feature/my-feature`
-3. نام‌های جدید را به `Persian-name-founder-v2.html` (آرایهٔ `NAMES`) اضافه کنید — [راهنمای قالب رکورد](wiki/Name-Database.md)
+3. نام‌های جدید را به `index.html` (آرایهٔ `NAMES`) اضافه کنید — [راهنمای قالب رکورد](https://github.com/Kourosh242/Persian-name-finder/wiki/Name-Database)
 4. تغییرات را Commit و Pull Request ارسال کنید
 
 ## 📄 لایسنس
@@ -104,17 +107,19 @@ Persian-name-finder/
 
 ## About
 
-**Persian Name Finder v2.0** is a single-file, zero-dependency web app to discover the **root, meaning and famous bearers of Persian names**. Version 2 is a ground-up redesign with a smart search engine (typo-tolerant via Levenshtein distance), a curated local database of 100 names, live **Wikipedia (fa/en)** integration, and intelligent linguistic root analysis for unknown names.
+**Persian Name Finder** is a single-file, zero-dependency web app to discover the **root, meaning and famous bearers of Persian names**: a typo-tolerant smart search engine (Levenshtein distance), a curated local database of 100 names, live **Wikipedia (fa/en)** integration, and linguistic root analysis for unknown names.
 
-## 🚀 Live Links
+## 🚀 Live
 
-| Version | URL |
+| Resource | URL |
 |:---:|:---|
-| **✨ V2 (current)** | **<https://kourosh242.github.io/Persian-name-finder/v2/>** |
-| V1 (classic PWA) | <https://kourosh242.github.io/Persian-name-finder/> |
-| 📖 Project Wiki | <https://kourosh242.github.io/Persian-name-finder/wiki/> |
+| **✨ App (always latest)** | **<https://kourosh242.github.io/Persian-name-finder/>** |
+| 📖 Official Wiki | <https://github.com/Kourosh242/Persian-name-finder/wiki> |
+| 🌐 Wiki mirror | <https://kourosh242.github.io/Persian-name-finder/wiki/> |
 
-## ✨ Key Features (v2)
+> **One app, one URL.** The app is published only at the repository root; every future version replaces the previous one at the exact same address. Version 1 is retired — see the [Versions page](https://github.com/Kourosh242/Persian-name-finder/wiki/Versions).
+
+## ✨ Key Features
 
 - 🔎 **Fuzzy search** — typo-tolerant matching using Levenshtein distance
 - 🔤 **Smart normalization** — unifies Arabic/Persian letters (ي/ی، ك/ک), strips diacritics & ZWNJ
@@ -128,16 +133,16 @@ Persian-name-finder/
 ## 📦 Project Structure
 
 ```
-├── index.html                    # V1 (classic PWA)        → /
-├── v2/index.html                 # V2 deployed on Pages    → /v2/
-├── Persian-name-founder-v2.html  # V2 single-file source
-├── wiki/                         # Hosted wiki + markdown sources → /wiki/
-├── manifest.json · sw.js · icons # V1 PWA assets
+├── index.html               # The whole app in one file → served at /
+├── sw.js                    # Kill-switch service worker (clears the retired v1 PWA cache)
+├── v2/index.html            # Redirect from the legacy /v2/ path to /
+├── wiki/                    # GitHub Wiki sources (*.md) + hosted mirror (index.html)
+├── scripts/publish-wiki.sh  # Publishes wiki/*.md to the GitHub Wiki
 ```
 
 ## 🤝 Contributing & License
 
-Fork → branch → add names to the `NAMES` array → open a Pull Request. See the [Name Database guide](wiki/Name-Database.md).
+Fork → branch → add names to the `NAMES` array in `index.html` → open a Pull Request. See the [Name Database guide](https://github.com/Kourosh242/Persian-name-finder/wiki/Name-Database).
 
 Released under the [MIT License](LICENSE).
 

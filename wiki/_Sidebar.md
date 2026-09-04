@@ -6,13 +6,13 @@
 - [[Wikipedia-Integration|🌐 ویکی‌پدیا]]
 - [[Name-Database|📚 پایگاه دادهٔ نام‌ها]]
 - [[Deployment|🚀 استقرار و اجرا]]
-- [[Versions|🧭 مقایسهٔ نسخه‌ها]]
+- [[Versions|🧭 نسخه‌ها]]
 - [[FAQ|❓ سوالات متداول]]
 - [[Roadmap|🗺 نقشهٔ راه]]
 - [[Contributing|🤝 مشارکت]]
 
 ---
 
-- 🚀 [اپ نسخهٔ ۲](https://kourosh242.github.io/Persian-name-finder/v2/)
-- 📖 [ویکی آنلاین](https://kourosh242.github.io/Persian-name-finder/wiki/)
+- 🚀 [اپ معنایاب نام فارسی](https://kourosh242.github.io/Persian-name-finder/)
 - 🗂 [مخزن گیت‌هاب](https://github.com/Kourosh242/Persian-name-finder)
+- 🌐 [آینهٔ ویکی روی Pages](https://kourosh242.github.io/Persian-name-finder/wiki/)
